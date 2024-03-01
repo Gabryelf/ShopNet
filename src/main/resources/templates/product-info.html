@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SHOP-NET</title>
+</head>
+<body>
+<h1>Мы рады вам!</h1>
+<hr>
+<h4>Информация</h4>
+<p><b>Название: </b><span th:text="${product.title}"></span></p>
+<p><b>Описание: </b><span th:text="${product.description}"></span></p>
+<p><b>Цена: </b><span th:text="${product.price}"></span></p>
+<p><b>Город: </b><span th:text="${product.city}"></span></p>
+<p><b>Пользователь: </b><span th:text="${product.author}"></span></p>
+<hr>
+<form th:action="@{/product/delete/{id}(id=${product.id})}" method="post">
+    <input type="submit" value="Удалить"/>
+</form>
+
+</body>
+</html>
+
+
