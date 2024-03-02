@@ -7,6 +7,7 @@
 <body>
 <h1>Мы рады вам!</h1>
 <hr>
+
 <h4>Информация</h4>
 <p><b>Название: </b><span th:text="${product.title}"></span></p>
 <p><b>Описание: </b><span th:text="${product.description}"></span></p>
@@ -14,11 +15,16 @@
 <p><b>Город: </b><span th:text="${product.city}"></span></p>
 <p><b>Пользователь: </b><span th:text="${product.author}"></span></p>
 <hr>
+
+<div th:each="img : ${images}">
+    <img th:src="@{'/images/' + ${img.id}}" height="60px"/><br>
+</div>
+
 <form th:action="@{/product/delete/{id}(id=${product.id})}" method="post">
     <input type="submit" value="Удалить"/>
 </form>
-
 </body>
 </html>
+
 
 

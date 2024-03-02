@@ -1,6 +1,6 @@
-package com.example.ShopNet.repository;
+package com.example.ShopNet.repositories;
 
-import com.example.ShopNet.model.Product;
+import com.example.ShopNet.models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

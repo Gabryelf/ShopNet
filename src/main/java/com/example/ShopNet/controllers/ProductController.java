@@ -1,14 +1,16 @@
-package com.example.ShopNet.controller;
+package com.example.ShopNet.controllers;
 
-import com.example.ShopNet.model.Product;
-import com.example.ShopNet.service.ProductService;
-import freemarker.ext.beans.StringModel;
+import com.example.ShopNet.models.Product;
+import com.example.ShopNet.services.ProductService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @Controller
 @RequiredArgsConstructor
@@ -25,18 +27,18 @@ public class ProductController {
     @GetMapping("/product/{id}")
     public String productInfo(@PathVariable Long id, Model model){
         Product product = productService.getProductById(id);
-
-        if (product == null) {
-            return "redirect:/";
-        }
+        model.addAttribute( "product", product );
+        model.addAttribute( "images", product.getImages() );
 
         model.addAttribute("product", product);
         return "product-info";
     }
 
     @PostMapping("/product/create")
-    public String createProduct(Product product){
-        productService.saveProduct( product );
+    public String createProduct(@RequestParam("file1") MultipartFile file1,
+                                @RequestParam("file2") MultipartFile file2,
+                                @RequestParam("file3") MultipartFile file3, Product product) throws IOException {
+        productService.saveProduct(product, file1,file2,file3 );
         return "redirect:/";
 
     }

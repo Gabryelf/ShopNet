@@ -5,14 +5,13 @@
     <title>SHOP-NET</title>
 </head>
 <body>
-<h1>Привет! Вы на SHOP-NET</h1>
+<h1>Привет! Вы в SHOP-NET</h1>
 <hr>
 <h4>Наши товары</h4>
 <form th:action="@{/}" method="get">
     Поиск по названию<input type="text" name="title" th:value="${title}"/><br>
     <input type="submit" value="Искать"/>
 </form>
-
 
 <div th:each="product : ${products}">
     <p>
@@ -24,16 +23,22 @@
 <hr>
 
 <h3>Создать</h3>
-<form action="/product/create" method="post">
+<form action="/product/create" method="post" enctype="multipart/form-data">
     <b>Название: </b><input type="text" name="title"/><br>
     <b>Описание: </b><input type="text" name="description"/><br>
     <b>Цена: </b><input type="text" name="price"/><br>
     <b>Город: </b><input type="text" name="city"/><br>
     <b>Пользователь: </b><input type="text" name="author"/><br>
+    <b>Превью фото: </b><input type="file" name="file1"/><br>
+    <b>Фото Вложение1: </b><input type="file" name="file2"/><br>
+    <b>Фото Вложение2: </b><input type="file" name="file3"/><br>
     <input type="submit" value="Добавить"/>
 </form>
 </body>
 </html>
+
+
+
 
 
 
