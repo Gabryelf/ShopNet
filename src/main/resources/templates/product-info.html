@@ -13,7 +13,8 @@
 <p><b>Описание: </b><span th:text="${product.description}"></span></p>
 <p><b>Цена: </b><span th:text="${product.price}"></span></p>
 <p><b>Город: </b><span th:text="${product.city}"></span></p>
-<p><b>Пользователь: </b><span th:text="${product.author}"></span></p>
+<p><b>Автор: </b><span th:text="${product.user.name}"></span></p>
+<p><b>Телефон продавца: </b><span th:text="${product.user.phoneNumber}"></span></p>
 <hr>
 
 <div th:each="img : ${images}">

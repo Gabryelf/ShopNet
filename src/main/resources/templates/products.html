@@ -2,40 +2,68 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>SHOP-NET</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP-NETL</title>
 </head>
 <body>
-<h1>Привет! Вы в SHOP-NET</h1>
-<hr>
-<h4>Наши товары</h4>
-<form th:action="@{/}" method="get">
-    Поиск по названию<input type="text" name="title" th:value="${title}"/><br>
-    <input type="submit" value="Искать"/>
-</form>
-
-<div th:each="product : ${products}">
-    <p>
-        <b th:text="${product.title}"></b>
-        <span th:text="${product.price}"></span> руб. |
-        <a th:href="@{'/product/' + ${product.id}}">Подробно</a>
-    </p>
-</div>
+<h1>SHOP-NET</h1>
 <hr>
 
-<h3>Создать</h3>
-<form action="/product/create" method="post" enctype="multipart/form-data">
-    <b>Название: </b><input type="text" name="title"/><br>
-    <b>Описание: </b><input type="text" name="description"/><br>
-    <b>Цена: </b><input type="text" name="price"/><br>
-    <b>Город: </b><input type="text" name="city"/><br>
-    <b>Пользователь: </b><input type="text" name="author"/><br>
-    <b>Превью фото: </b><input type="file" name="file1"/><br>
-    <b>Фото Вложение1: </b><input type="file" name="file2"/><br>
-    <b>Фото Вложение2: </b><input type="file" name="file3"/><br>
-    <input type="submit" value="Добавить"/>
+<th:block th:if="${user.email != null}">
+    <h3>Имя пользователя: <i th:text="${user.name}"></i></h3>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+        <input type="submit" value="Выйти"/>
+    </form>
+
+    <hr>
+    <h3>Создать новый товар</h3>
+    <form action="/product/create" method="post" enctype="multipart/form-data">
+        Название объявления: <input type="text" name="title"/><br><br>
+        Описание объявления: <input type="text" name="description"/><br><br>
+        Цена: <input type="number" name="price"/><br><br>
+        Город: <input type="text" name="city"/><br><br>
+        Первая фотография: <input type="file" name="file1"/><br><br>
+        Вторая фотография: <input type="file" name="file2"/><br><br>
+        Третья фотография: <input type="file" name="file3"/><br><br>
+        <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+        <input type="submit" value="Добавить товар"/>
+    </form>
+</th:block>
+
+<th:block th:unless="${user.email != null}">
+    <a href="/login">Войти</a>
+</th:block>
+
+<hr>
+<h4>Товары со всей России</h4>
+
+<form action="/" method="get">
+    Поиск по названию объявления: <input type="text" name="title">
+    <input type="submit" value="Поиск"/>
 </form>
+
+<th:block th:if="${not #lists.isEmpty(products)}">
+    <th:block th:each="product : ${products}">
+        <div>
+            <p>
+                <b th:text="${product.title}"></b>
+                <span th:text="${product.price} + ' руб.'"></span> |
+                <a th:href="@{/product/{id}(id=${product.id})}">Подробнее...</a>
+            </p>
+        </div>
+    </th:block>
+</th:block>
+
+<th:block th:unless="${not #lists.isEmpty(products)}">
+    <h3>Товаров нет</h3>
+</th:block>
 </body>
 </html>
+
+
+
 
 
 
