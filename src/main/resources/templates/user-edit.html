@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>SHOP-NET</title>
+</head>
+<body>
+<h1>SHOP-NET</h1>
+<hr>
+<h3 th:text="'Редактирование пользователя ' + ${user.name}"></h3>
+<form action="/admin/user/edit" method="post">
+  <div th:each="role : ${roles}">
+    <div>
+      <label>
+        <input type="checkbox" th:name="${role}" th:checked="${user.roles.contains(role)}"/>
+        <span th:text="${role}"></span>
+      </label>
+    </div>
+  </div>
+  <input type="hidden" th:value="${user.id}" name="userId"/>
+  <input type="hidden" th:value="${_csrf.token}" name="_csrf"/>
+  <button type="submit">Сохранить</button>
+</form>
+</body>
+</html>

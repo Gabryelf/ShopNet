@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SHOP-NET</title>
+</head>
+<body>
+<h1>SHOP-NET</h1>
+<hr>
+<h4>Панель администратора</h4>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Email</th>
+        <th>Номер телефона</th>
+        <th>Активность</th>
+        <th>Роли</th>
+        <th>Бан</th>
+        <th>Редактирование</th>
+        <th>Подробная информация</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:if="${not #lists.isEmpty(users)}">
+        <tr th:each="user : ${users}">
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.phoneNumber}"></td>
+            <td th:text="${user.active} ? 'true' : 'false'"></td>
+            <td>
+                <th:block th:if="${not #lists.isEmpty(user.roles)}">
+                    <span th:each="role : ${user.roles}" th:text="${role}"></span>
+                </th:block>
+            </td>
+            <td>
+                <form th:action="@{/admin/user/ban/{id}(id=${user.id})}" method="post">
+                    <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+                    <input type="submit" value="Бан">
+                </form>
+            </td>
+            <td><a th:href="@{/admin/user/edit/{id}(id=${user.id})}">Редактирование</a></td>
+            <td><a th:href="@{/user/{id}(id=${user.id})}">Подробная информация</a></td>
+        </tr>
+    </th:block>
+    <th:block th:unless="${not #lists.isEmpty(users)}">
+        <tr>
+            <td colspan="7"><h3>Пользователей нет</h3></td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+</body>
+</html>

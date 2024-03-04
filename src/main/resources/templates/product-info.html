@@ -13,8 +13,10 @@
 <p><b>Описание: </b><span th:text="${product.description}"></span></p>
 <p><b>Цена: </b><span th:text="${product.price}"></span></p>
 <p><b>Город: </b><span th:text="${product.city}"></span></p>
-<p><b>Автор: </b><span th:text="${product.user.name}"></span></p>
-<p><b>Телефон продавца: </b><span th:text="${product.user.phoneNumber}"></span></p>
+
+<!-- Make the author's name a hyperlink -->
+<p><b>Автор: </b><a th:href="@{'/user/' + ${product.user.id}}"><span th:text="${product.user.name}"></span></a></p>
+
 <hr>
 
 <div th:each="img : ${images}">
@@ -26,6 +28,7 @@
 </form>
 </body>
 </html>
+
 
 
 

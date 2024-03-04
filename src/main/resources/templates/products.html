@@ -9,6 +9,7 @@
 <body>
 <h1>SHOP-NET</h1>
 <hr>
+<a th:if="${user.isAdmin()}" href="/admin">Панель администратора</a>
 
 <th:block th:if="${user.email != null}">
     <h3>Имя пользователя: <i th:text="${user.name}"></i></h3>
