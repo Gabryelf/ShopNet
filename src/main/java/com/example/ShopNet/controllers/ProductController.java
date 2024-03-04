@@ -1,6 +1,7 @@
 package com.example.ShopNet.controllers;
 
 import com.example.ShopNet.models.Product;
+import com.example.ShopNet.models.User;
 import com.example.ShopNet.services.ProductService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -37,21 +38,26 @@ public class ProductController {
     }
 
     @PostMapping("/product/create")
-    public String createProduct(@RequestParam("file1") MultipartFile file1,
-                                @RequestParam("file2") MultipartFile file2,
+    public String createProduct(@RequestParam("file1") MultipartFile file1, @RequestParam("file2") MultipartFile file2,
                                 @RequestParam("file3") MultipartFile file3, Product product, Principal principal) throws IOException {
-        productService.saveProduct( principal ,product, file1,file2,file3 );
-        return "redirect:/";
-
+        productService.saveProduct(principal, product, file1, file2, file3);
+        return "redirect:/my/products";
     }
 
     @PostMapping("/product/delete/{id}")
-    public String deleteProduct(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response){
-        productService.deleteProduct(id);
-        return "redirect:/";  // Замените на return "products";
+    public String deleteProduct(@PathVariable Long id, Principal principal) {
+        productService.deleteProduct(productService.getUserByPrincipal(principal), id);
+        return "redirect:/my/products";
     }
 
 
+    @GetMapping("/my/products")
+    public String userProducts(Principal principal, Model model) {
+        User user = productService.getUserByPrincipal(principal);
+        model.addAttribute("user", user);
+        model.addAttribute("products", user.getProducts());
+        return "my-products";
+    }
 
 
 }

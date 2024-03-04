@@ -62,6 +62,22 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.1</version> <!-- или более новая версия, если есть -->
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Mockito for mocking in tests -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>5.6.0</version> <!-- или более новая версия, если есть -->
+			<scope>test</scope>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

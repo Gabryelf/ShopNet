@@ -1,0 +1,54 @@
+<!-- user.html -->
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHOP-NET</title>
+</head>
+<body>
+<h1>SHOP-NET</h1>
+<hr>
+<a th:if="${user.isAdmin()}" href="/admin">Панель администратора</a>
+
+<th:block th:if="${user.email != null}">
+  <h3>Имя пользователя: <i th:text="${user.name}"></i></h3>
+  <form action="/logout" method="post">
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+    <input type="submit" value="Выйти"/>
+  </form>
+
+  <hr>
+  <h3>Создать новый товар</h3>
+  <!-- Добавьте ваш пользовательский контент формы здесь -->
+</th:block>
+
+<th:block th:unless="${user.email != null}">
+  <a href="/login">Войти</a>
+</th:block>
+
+<hr>
+<h4>Товары со всей России</h4>
+
+<form action="/" method="get">
+  Поиск по названию объявления: <input type="text" name="title">
+  <input type="submit" value="Поиск"/>
+</form>
+
+<th:block th:if="${not #lists.isEmpty(products)}">
+  <th:block th:each="product : ${products}">
+    <div>
+      <p>
+        <b th:text="${product.title}"></b>
+        <span th:text="${product.price} + ' руб.'"></span> |
+        <a th:href="@{/product/{id}(id=${product.id})}">Подробнее...</a>
+      </p>
+    </div>
+  </th:block>
+</th:block>
+
+<th:block th:unless="${not #lists.isEmpty(products)}">
+  <h3>Товаров нет</h3>
+</th:block>
+</body>
+</html>

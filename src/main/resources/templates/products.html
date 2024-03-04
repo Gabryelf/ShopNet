@@ -1,67 +1,126 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOP-NETL</title>
+    <title>SHOP-NET</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <!-- Optional: Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body>
-<h1>SHOP-NET</h1>
-<hr>
-<a th:if="${user.isAdmin()}" href="/admin">Панель администратора</a>
 
-<th:block th:if="${user.email != null}">
-    <h3>Имя пользователя: <i th:text="${user.name}"></i></h3>
-    <form action="/logout" method="post">
-        <input type="hidden" name="_csrf" th:value="${_csrf.token}">
-        <input type="submit" value="Выйти"/>
-    </form>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/}">SHOP-NET</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li th:if="${user.email}" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="/static/images/avatar.png" alt="mdo" width="32" height="32"
+                             class="rounded-circle">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" th:href="@{/profile}">Профиль</a>
+                        <!-- Добавьте другие пункты меню, если нужно -->
+                    </div>
+                </li>
+                <li th:unless="${user.email}" class="nav-item">
+                    <a class="btn btn-light my-2 my-sm-0" href="/login">Войти</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <h1 class="mb-4">SHOP-NET</h1>
+    <hr>
+
+    <!-- Форма создания нового товара -->
+    <th:block th:if="${user.email != null}">
+        <h3>Имя пользователя: <span th:text="${user.name}"></span></h3>
+        <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+            <input type="submit" class="btn btn-primary" value="Выйти"/>
+        </form>
+
+        <hr>
+        <h3>Создать новый товар</h3>
+        <form action="/product/create" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Название объявления:</label>
+                <input type="text" class="form-control" id="title" name="title"/>
+            </div>
+            <!-- Добавьте другие поля формы, если нужно -->
+            <button type="submit" class="btn btn-success">Добавить товар</button>
+        </form>
+    </th:block>
+
+    <!-- Если пользователь не вошел, показать ссылку на страницу входа -->
+    <th:block th:unless="${user.email != null}">
+        <a href="/login" class="btn btn-light">Войти</a>
+    </th:block>
 
     <hr>
-    <h3>Создать новый товар</h3>
-    <form action="/product/create" method="post" enctype="multipart/form-data">
-        Название объявления: <input type="text" name="title"/><br><br>
-        Описание объявления: <input type="text" name="description"/><br><br>
-        Цена: <input type="number" name="price"/><br><br>
-        Город: <input type="text" name="city"/><br><br>
-        Первая фотография: <input type="file" name="file1"/><br><br>
-        Вторая фотография: <input type="file" name="file2"/><br><br>
-        Третья фотография: <input type="file" name="file3"/><br><br>
-        <input type="hidden" name="_csrf" th:value="${_csrf.token}">
-        <input type="submit" value="Добавить товар"/>
-    </form>
-</th:block>
+    <h4>Товары со всей России</h4>
 
-<th:block th:unless="${user.email != null}">
-    <a href="/login">Войти</a>
-</th:block>
-
-<hr>
-<h4>Товары со всей России</h4>
-
-<form action="/" method="get">
-    Поиск по названию объявления: <input type="text" name="title">
-    <input type="submit" value="Поиск"/>
-</form>
-
-<th:block th:if="${not #lists.isEmpty(products)}">
-    <th:block th:each="product : ${products}">
-        <div>
-            <p>
-                <b th:text="${product.title}"></b>
-                <span th:text="${product.price} + ' руб.'"></span> |
-                <a th:href="@{/product/{id}(id=${product.id})}">Подробнее...</a>
-            </p>
+    <!-- Форма поиска -->
+    <form action="/" method="get" class="mb-4">
+        <div class="input-group">
+            <input type="text" class="form-control" name="title" placeholder="Поиск по названию объявления">
+            <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="submit">Поиск</button>
+            </div>
         </div>
-    </th:block>
-</th:block>
+    </form>
 
-<th:block th:unless="${not #lists.isEmpty(products)}">
-    <h3>Товаров нет</h3>
-</th:block>
+    <!-- Вывод товаров -->
+    <th:block th:if="${not #lists.isEmpty(products)}">
+        <th:block th:each="product : ${products}">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${product.title}"></h5>
+                    <p class="card-text" th:text="${product.price} + ' руб.'"></p>
+                    <a href="#" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </th:block>
+    </th:block>
+
+    <!-- Если товаров нет -->
+    <th:block th:unless="${not #lists.isEmpty(products)}">
+        <h3>Товаров нет</h3>
+    </th:block>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js}"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js}"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
 </body>
 </html>
+
+
 
 
 

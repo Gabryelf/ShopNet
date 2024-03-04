@@ -31,7 +31,7 @@ public class SecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFil
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/", "/product/create/**", "/product/**", "/images/**", "/registration", "/user/**").permitAll()
+                        .requestMatchers("/", "/product/create/**", "/product/**", "/images/**", "/registration", "/user/**", "/static/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(login -> login

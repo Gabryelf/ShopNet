@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Личный кабинет</title>
+  <!-- Добавьте ссылку на Bootstrap, если необходимо -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+        crossorigin="anonymous">
+  <!-- Ваши собственные стили -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h1 class="text-center">Личный кабинет</h1>
+  <hr>
+  <br>
+
+  <div class="text-center">
+    <img src="/static/images/avatar.png" style="border: 2px solid black; border-radius: 20px" height="120">
+    <br>
+    <br>
+    <h2 th:text="${user.name}"></h2>
+    <br>
+    Электронная почта: <b th:text="${user.email}"></b>
+    <br>
+    Номер телефона: <b th:text="${user.phoneNumber}"></b>
+    <br>
+    <br>
+    <div th:if="${user.isAdmin()}">
+      <a class="btn btn-dark mb-3" style="width: 100%" th:href="@{/admin}">
+        Панель администратора
+      </a><br>
+    </div>
+    <a class="btn btn-dark mb-3" style="width: 100%" th:href="@{/my/products}">
+      Мои товары
+    </a>
+    <form action="/logout" method="post">
+      <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+      <button type="submit" style="width: 100%" class="btn btn-danger mb-2">
+        Выйти из аккаунта
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Подключение необходимых скриптов Bootstrap (если необходимо) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+</body>
+</html>

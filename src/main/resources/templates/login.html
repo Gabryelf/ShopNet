@@ -2,16 +2,59 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>SHOP_NET</title>
+    <!-- Подключаем Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+          crossorigin="anonymous">
+    <!-- Ваши собственные стили -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Импорт макроса -->
+    <#import "template.ftlh" as t>
 </head>
-<body>
-<h1>SHOP-NET</h1><hr>
-<h4>Авторизация</h4>
-<form th:action="@{/login}" method="post">
-    Эл. почта: <input type="email" name="username"><br><br>
-    Пароль: <input type="password" name="password"><br><br>
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-    <input type="submit" value="Вход"/>
-</form>
-<a th:href="@{/registration}">Зарегистрироваться</a>
+<body class="bg-light"> <!-- Добавим класс фона для всей страницы -->
+
+<div class="container mt-5"> <!-- Добавим контейнер Bootstrap с верхним отступом -->
+
+    <h1 class="mb-4">SHOP-NET</h1> <!-- Добавим отступ снизу для заголовка -->
+
+    <div class="card w-50 mx-auto"> <!-- Создаем карточку Bootstrap с шириной и центрированием -->
+        <div class="card-body">
+            <h4 class="card-title">Авторизация</h4>
+
+            <!-- Используем форму Bootstrap с исправленным путем действия -->
+            <form th:action="@{/login}" method="post">
+                <div class="form-group">
+                    <label for="username">Эл. почта:</label>
+                    <input type="email" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                <button type="submit" class="btn btn-primary">Вход</button>
+            </form>
+
+            <p class="mt-3">
+                <a th:href="@{/registration}">Зарегистрироваться</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Подключаем Bootstrap JS и зависимости -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
