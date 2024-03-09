@@ -31,12 +31,12 @@ public class SecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFil
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/", "/product/create/**", "/product/**", "/images/**", "/registration", "/user/**", "/static/**").permitAll()
+                        .requestMatchers("/", "/product/create/**", "/product/**", "/images/**", "/registration", "/user/**", "/static/**", "/js/**", "/hello", "/products").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(login -> login
                         .loginPage("/login")
-                        .defaultSuccessUrl("/")
+                        .defaultSuccessUrl("/products")
                         .permitAll())
                 .logout(logout -> logout
                         .logoutSuccessUrl("/"));

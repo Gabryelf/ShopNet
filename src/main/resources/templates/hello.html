@@ -1,10 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Hello!</title>
+
+    <!-- Подключение Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+          crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Чтобы избежать прокрутки при полном экране */
+        }
+
+        .carousel-inner {
+            height: 100vh; /* Занимает 100% высоты окна браузера */
+            display: flex;
+            align-items: center;
+        }
+
+        .carousel-item {
+            width: 100vw; /* Занимает 100% ширины окна браузера */
+            height: 100vh; /* Занимает 100% высоты окна браузера */
+            position: relative;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Чтобы изображение полностью заполняло контейнер */
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1; /* Помещаем контейнер с кнопками поверх изображения */
+            text-align: center;
+        }
+
+        .btn-container {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-$Добро пожаловать!$
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="https://img.freepik.com/free-vector/fantasy-medieval-gold-ring-ui-game-icon-vector-magic-royal-inventory-asset-element-with-beautiful-gemstone-cartoon-amulet-treasure-accessories-set-with-glow-and-mist-fairytale-props-achievements_107791-21371.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="https://img.freepik.com/free-vector/delivery-vector-game-ui-element-set-isolated-cartoon-glossy-credit-card-dollar-pencil-medal-magnifying-glass-and-calendar-icon-pack-for-computer-menu-interface-thumbs-up-finger-gesture-clipart_107791-21188.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlrcFSqc3i3REKuAvzfPErsyElpE0ePspEaFwvHd8rt3kq98PLQ3gAn5z7GW8ghydAWBg&usqp=CAU" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="https://img.freepik.com/free-vector/set-game-icons-buttons-cartoon-3d-ui-shield-sword-flash-heart-golden-cup-magic-potion-flasks-gold-key-treasure-chest-flag-gift-box-bomb-money-bills-hourglass-brilliant_107791-8159.jpg" alt="Fourth slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="https://img.freepik.com/premium-photo/a-collection-of-items-for-the-game_899894-22532.jpg" alt="Fifth slide">
+        </div>
+
+
+        <!-- Добавьте дополнительные элементы carousel-item для большего количества изображений -->
+    </div>
+
+    <div class="container text-center">
+        <h1>Welcome!</h1>
+        <div class="btn-container">
+            <a href="/registration" class="btn btn-primary btn-lg">Create Account</a>
+            <a href="/login" class="btn btn-success btn-lg">Login</a>
+        </div>
+    </div>
+</div>
+
+<!-- Подключение Bootstrap JS и jQuery (если необходимо) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.carousel').carousel({
+            interval: 8000, // Интервал в миллисекундах (8 секунд)
+            pause: false // Автоматическая смена слайдов не останавливается при взаимодействии пользователя
+        });
+    });
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+

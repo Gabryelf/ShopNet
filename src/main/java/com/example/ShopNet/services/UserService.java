@@ -5,6 +5,11 @@ import com.example.ShopNet.models.enums.Role;
 import com.example.ShopNet.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -73,4 +78,32 @@ public class UserService {
         if (principal == null) return new User();
         return userRepository.findByEmail(principal.getName());
     }
+
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(username);
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found with email: " + username);
+        }
+
+        // You can customize how user details are created based on your User entity
+        return org.springframework.security.core.userdetails.User
+                .withUsername(user.getEmail())
+                .password(user.getPassword())
+                .roles(user.getRoles().stream().map(Role::name).toArray(String[]::new))
+                .build();
+    }
+
+    public boolean authenticate(String username, String password) {
+        UserDetails userDetails = loadUserByUsername(username);
+
+        if (userDetails != null && passwordEncoder.matches(password, userDetails.getPassword())) {
+            Authentication authentication = new UsernamePasswordAuthenticationToken(
+                    userDetails, null, userDetails.getAuthorities());
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            return true;
+        }
+
+        return false;
+    }
+
 }

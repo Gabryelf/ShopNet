@@ -26,6 +26,9 @@
             <p class="card-text"><b>Цена: </b><span th:text="${product.price}"></span></p>
             <p class="card-text"><b>Город: </b><span th:text="${product.city}"></span></p>
             <p class="card-text"><b>Автор: </b><a th:href="@{'/user/' + ${product.user.id}}"><span th:text="${product.user.name}"></span></a></p>
+            <button class="btn btn-warning"> <!-- Добавлен класс btn-warning для желтого цвета -->
+                <a th:href="@{/play}">Играть</a> <!-- Заглушка, замените на свою ссылку -->
+            </button>
         </div>
     </div>
 

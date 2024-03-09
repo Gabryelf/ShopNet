@@ -30,6 +30,8 @@ public class Product {
     private String city;
     @Column(name = "author")
     private String author;
+    @Column(name = "link")
+    private String link;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
 
