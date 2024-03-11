@@ -15,8 +15,8 @@
     <hr>
 
     <h3 th:text="'Подробная информация о пользователе ' + ${user.name}"></h3>
-    <b>Номер телефона: </b> <span th:text="${user.phoneNumber}"></span><br>
-    <b>Email: </b> <span th:text="${user.email}"></span><br>
+    <b>Номер телефона: </b><span th:text="${user.phoneNumber}"></span><br>
+    <b>Email: </b><span th:text="${user.email}"></span><br>
 
     <h4 th:text="'Товары пользователя ' + ${user.name}"></h4>
 
@@ -52,4 +52,5 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+
 

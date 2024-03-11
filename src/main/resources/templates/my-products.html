@@ -8,6 +8,17 @@
         crossorigin="anonymous">
   <!-- Ваши собственные стили -->
   <link rel="stylesheet" href="/static/css/style.css">
+
+  <style>
+        /* Add custom CSS for yellow and green background */
+        .yellow-bg {
+            background-color: yellow;
+        }
+
+        .green-bg {
+            background-color: lightgreen;
+        }
+    </style>
 </head>
 <body>
 
@@ -64,15 +75,21 @@
         <label for="searchCity">Город</label>
         <select id="searchCity" required name="city" class="form-control">
           <option value="">Город не выбран</option>
-          <option value="Москва">Москва</option>
-          <option value="Красноярск">Красноярск</option>
-          <option value="Казань">Казань</option>
+          <option value="">Москва</option>
+          <option value="">Симферополь</option>
+          <option value="">Казань</option>
+
+
         </select>
       </div>
 
       <div class="form-group">
         <label for="description">Описание товара</label>
         <textarea required class="form-control" id="description" name="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="link">Ссылка</label>
+        <textarea required class="form-control" id="link" name="link" oninput="changeColor()"></textarea>
       </div>
 
       <div class="form-group">
@@ -144,5 +161,20 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
+
+<script>
+    function changeColor() {
+        var linkInput = document.getElementById("link");
+        if (linkInput.value.trim() === "") {
+            // No value or only whitespace
+            linkInput.classList.remove("green-bg");
+            linkInput.classList.add("yellow-bg");
+        } else {
+            // Value is present
+            linkInput.classList.remove("yellow-bg");
+            linkInput.classList.add("green-bg");
+        }
+    }
+</script>
 </body>
 </html>
