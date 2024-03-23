@@ -16,6 +16,51 @@
             overflow: hidden; /* Чтобы избежать прокрутки при полном экране */
         }
 
+        .logo-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2; /* Помещаем контейнер с логотипом поверх изображения */
+            cursor: pointer; /* Делаем курсор указателем при наведении */
+            display: inline-flex; /* Для правильного позиционирования текста */
+        }
+
+        .logo-container img {
+            width: 50px; /* Регулируем ширину изображения */
+            height: auto;
+            border: 5px solid transparent; /* Добавляем обводку вокруг изображения */
+            border-radius: 10px; /* Закругляем углы */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Добавляем тень */
+            transition: border-color 0.3s ease; /* Плавное изменение цвета обводки */
+        }
+
+        .logo-container img:hover {
+            border-color: #ffd700; /* Изменяем цвет обводки при наведении */
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); /* Добавляем свечение вокруг при наведении */
+        }
+
+
+
+        .logo-container:hover::after {
+            content: 'Заходи и делись своим контентом с друзьями!'; /* Текст, который появляется при наведении */
+            position: absolute;
+            top: 50%;
+            left: 80px; /* Расположение текста сбоку от контейнера */
+            transform: translateY(-20%);
+            background-color: #ffd700; /* Цвет фона */
+            color: #fff; /* Цвет текста */
+            padding: 10px 20px; /* Отступы вокруг текста */
+            border-radius: 5px; /* Закругление углов */
+            transition: opacity 0.5s ease; /* Плавное появление текста */
+            opacity: 0; /* Начальная прозрачность текста */
+            z-index: 1; /* Помещаем текст поверх изображения */
+        }
+
+        .logo-container:hover::before,
+        .logo-container:hover::after {
+            opacity: 1; /* Появление текста при наведении */
+        }
+
         .carousel-inner {
             height: 100vh; /* Занимает 100% высоты окна браузера */
             display: flex;
@@ -43,12 +88,37 @@
             text-align: center;
         }
 
+        .welcome-message {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffffff; /* White color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding a subtle text shadow */
+        }
+
         .btn-container {
             margin-top: 20px;
+        }
+
+        .btn-visit {
+            background-color: #ffd700; /* Yellow color */
+            border-color: #ffd700;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
 <body>
+
+<div class="logo-container">
+    <img src="https://avatars.mds.yandex.net/get-games/1881957/2a0000018b3a8704719649af9f6ba3a7816e/icon1" alt="Logo">
+</div>
 
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
@@ -67,16 +137,14 @@
         <div class="carousel-item">
             <img class="d-block w-100" src="https://img.freepik.com/premium-photo/a-collection-of-items-for-the-game_899894-22532.jpg" alt="Fifth slide">
         </div>
-
-
-        <!-- Добавьте дополнительные элементы carousel-item для большего количества изображений -->
     </div>
 
     <div class="container text-center">
-        <h1>Welcome!</h1>
+        <h1 class="welcome-message">Welcome to Shop-Net!</h1>
         <div class="btn-container">
             <a href="/registration" class="btn btn-primary btn-lg">Create Account</a>
-            <a href="/login" class="btn btn-success btn-lg">Login</a>
+             <a href="/login" class="btn btn-success btn-lg">Login</a>
+            <a href="/products" class="btn btn-success btn-lg btn-visit">Visit without registration</a>
         </div>
     </div>
 </div>
@@ -91,17 +159,10 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-
-<script>
-    $(document).ready(function () {
-        $('.carousel').carousel({
-            interval: 8000, // Интервал в миллисекундах (8 секунд)
-            pause: false // Автоматическая смена слайдов не останавливается при взаимодействии пользователя
-        });
-    });
-</script>
 </body>
 </html>
+
+
 
 
 

@@ -81,7 +81,7 @@ public class ProductServiceTest {
 
         Mockito.when(productRepository.findById(2L)).thenReturn( Optional.of(product));
 
-        productService.deleteProduct(user, 2L);
+        productService.deleteProduct(2L);
 
         Mockito.verify(productRepository, Mockito.times(1)).delete(product);
     }

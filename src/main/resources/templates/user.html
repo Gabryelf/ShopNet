@@ -1,54 +1,76 @@
-<!-- user.html -->
-<html lang="ru" xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SHOP-NET</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+        crossorigin="anonymous">
+  <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        h1, h3, h4 {
+            text-align: center;
+        }
+
+        h4 {
+            margin-top: 20px;
+        }
+
+        b {
+            color: #007bff;
+        }
+
+        .product-info {
+            margin-top: 10px;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-<h1>SHOP-NET</h1>
-<hr>
-<a th:if="${user.isAdmin()}" href="/admin">Панель администратора</a>
-
-<th:block th:if="${user.email != null}">
-  <h3>Имя пользователя: <i th:text="${user.name}"></i></h3>
-  <form action="/logout" method="post">
-    <input type="hidden" name="_csrf" th:value="${_csrf.token}">
-    <input type="submit" value="Выйти"/>
-  </form>
-
+<div class="container">
+  <h1>SHOP-NET</h1>
   <hr>
-  <h3>Создать новый товар</h3>
-  <!-- Добавьте ваш пользовательский контент формы здесь -->
-</th:block>
-
-<th:block th:unless="${user.email != null}">
-  <a href="/login">Войти</a>
-</th:block>
-
-<hr>
-<h4>Товары со всей России</h4>
-
-<form action="/" method="get">
-  Поиск по названию объявления: <input type="text" name="title">
-  <input type="submit" value="Поиск"/>
-</form>
-
-<th:block th:if="${not #lists.isEmpty(products)}">
-  <th:block th:each="product : ${products}">
-    <div>
-      <p>
-        <b th:text="${product.title}"></b>
-        <span th:text="${product.price} + ' руб.'"></span> |
-        <a th:href="@{/product/{id}(id=${product.id})}">Подробнее...</a>
-      </p>
+  <h3 th:text="'Подробная информация о пользователе ' + ${user.name}"></h3>
+  <div class="product-info">
+    <b>Номер телефона: </b> <span th:text="${user.phoneNumber}"></span><br>
+    <b>Email: </b> <span th:text="${user.email}"></span><br>
+    <h4>Товары пользователя <span th:text="${user.name}"></span></h4>
+    <div th:if="${not #lists.isEmpty(products)}">
+      <div th:each="product : ${products}">
+        <p>
+          <b th:text="${product.title}"></b>
+          <span th:text="${product.price} + ' руб.'"></span> |
+          <a th:href="@{'/product/' + ${product.id}}">Подробнее...</a>
+        </p>
+      </div>
     </div>
-  </th:block>
-</th:block>
+    <div th:unless="${not #lists.isEmpty(products)}">
+      <h3>Товаров нет</h3>
+    </div>
+  </div>
+  <div th:if="${errorMessage}" class="error-message">
+    <h2 th:text="${errorMessage}"></h2>
+  </div>
+</div>
 
-<th:block th:unless="${not #lists.isEmpty(products)}">
-  <h3>Товаров нет</h3>
-</th:block>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 </body>
 </html>
+

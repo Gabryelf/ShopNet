@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Archive</title>
+</head>
+<body>
+<h2>Upload Archive</h2>
+<form action="/upload-archive" method="post" enctype="multipart/form-data">
+    <label for="file">Select Archive:</label>
+    <input type="file" id="file" name="file" accept=".zip"><br><br>
+    <label for="projectName">Project Name:</label>
+    <input type="text" id="projectName" name="projectName" th:value="${projectName}"><br><br>
+    <button type="submit">Upload</button>
+</form>
+</body>
+</html>
+
+
+

@@ -1,5 +1,6 @@
 package com.example.ShopNet.models;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Image {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

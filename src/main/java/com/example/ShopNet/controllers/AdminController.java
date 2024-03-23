@@ -1,5 +1,6 @@
 package com.example.ShopNet.controllers;
 
+
 import com.example.ShopNet.models.User;
 import com.example.ShopNet.models.enums.Role;
 import com.example.ShopNet.services.UserService;
@@ -19,7 +20,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 @PreAuthorize( "hasAuthority('ROLE_ADMIN')" )
 public class AdminController {
-
     private final UserService userService;
 
     @GetMapping("/admin")
@@ -50,4 +50,6 @@ public class AdminController {
         return "redirect:/admin";
 
     }
+
+
 }

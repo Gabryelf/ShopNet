@@ -31,8 +31,9 @@ public class SecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFil
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/", "/product/create/**", "/product/**", "/images/**", "/registration", "/user/**", "/static/**", "/js/**", "/hello", "/products").permitAll()
+                        .requestMatchers("/", "/product/create/**", "/product/**", "/images/**", "/registration", "/user/**", "/static/**","/archives/upload-archive/**","/archives/**","/js/**", "/hello", "/products", "/videos/**" ,"/videos/upload", "/upload/**", "/upload-archive", "/upload-archive/**", "/archives/upload-archive/**", "/archive/up-archive/", "/unity/startArchive", "/startArchive", "/unity/startArchive/**", "/startArchive/**", "/unity/**", "/unity", "/resources", "/resources/templates/**").permitAll()
                         .anyRequest().authenticated()
+
                 )
                 .formLogin(login -> login
                         .loginPage("/login")
@@ -41,8 +42,8 @@ public class SecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFil
                 .logout(logout -> logout
                         .logoutSuccessUrl("/"));
         return http.build();
-    }
 
+    }
 
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Archive</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Upload Archive for Product: <span th:text="${product.title}"></span></h2>
+
+    <!-- Проверяем наличие архива для продукта -->
+    <div th:if="${!archiveExists}">
+        <form th:action="@{/archive/up-archive/{productName}(productName=${product.title})}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="archiveFile">Choose Archive File</label>
+                <input type="file" class="form-control-file" id="archiveFile" name="archiveFile" accept=".zip" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload Archive</button>
+        </form>
+    </div>
+
+    <!-- Форма для удаления архива -->
+    <div th:if="${archiveExists}">
+        <div class="mt-3">
+            <form th:action="@{/archive/del-archive/{productName}(productName=${product.title})}" method="post">
+                <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+                <button type="submit" class="btn btn-danger">Delete Archive</button>
+            </form>
+        </div>
+    </div>
+
+    <form id="startForm">
+        <!-- CSRF-токен -->
+        <input type="hidden" id="csrfToken" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+        <div class="form-group">
+            <label for="archiveId">Enter Archive ID:</label>
+            <input type="text" id="archiveId" name="archiveId" class="form-control" required>
+        </div>
+        <button type="button" class="btn btn-success" onclick="startUnityProject()">Start Unity Project</button>
+    </form>
+
+    <div id="result" class="mt-3"></div>
+
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js}"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js}"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+<!-- JavaScript для начала проекта Unity -->
+<script>
+
+
+     function checkFileSelected() {
+        var fileInput = document.getElementById('archiveFile');
+        if (fileInput.files.length === 0) {
+            alert("Please select a file before starting the project.");
+            return false; // Прерываем отправку формы
+        }
+        return true; // Продолжаем отправку формы
+    }
+
+    // Функция для начала проекта Unity
+    function startUnityProject() {
+        // Проверяем, выбран ли файл перед отправкой формы
+        if (!checkFileSelected()) {
+            return; // Прерываем выполнение функции, если файл не выбран
+        }
+
+        // Получаем данные из формы и отправляем запрос на сервер...
+    }
+
+        // Отправляем POST-запрос на сервер
+        fetch('/unity/startArchive', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': document.getElementById('csrfToken').value // Передача CSRF-токена в заголовке запроса
+            }
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Обновляем содержимое страницы на основе ответа от сервера
+            document.getElementById('result').innerHTML = '<a href="' + data + '">Unity Project URL</a>';
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            document.getElementById('result').innerHTML = 'Ошибка: ' + error.message;
+        });
+    }
+</script>
+
+</body>
+</html>

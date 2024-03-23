@@ -1,5 +1,6 @@
 package com.example.ShopNet.services;
 
+import com.example.ShopNet.models.User;
 import com.example.ShopNet.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
