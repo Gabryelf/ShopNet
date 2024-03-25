@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+/**
+ * Сущность, представляющая фото/картинки пользователя в базе данных.
+ */
 
 @Entity
 @Table(name = "images")

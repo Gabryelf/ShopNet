@@ -3,7 +3,9 @@ package com.example.ShopNet.models;
 import jakarta.persistence.*;
 import lombok.*;
 
-
+/**
+ * Сущность, представляющая архивный файл в базе данных.
+ */
 @Entity
 @Table(name = "archives")
 @Data

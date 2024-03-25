@@ -14,13 +14,23 @@ import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 
+/**
+ * Контроллер для обработки запросов, связанных с продуктами.
+ */
 @Controller
 @RequiredArgsConstructor
 public class ProductController {
 
     private final ProductService productService;
 
-
+    /**
+     * Отображает страницу со списком продуктов.
+     *
+     * @param title     Название продукта (необязательный параметр).
+     * @param principal Информация о текущем пользователе.
+     * @param model     Модель для передачи данных в представление.
+     * @return Путь к странице со списком продуктов.
+     */
     @GetMapping("/products")
     public String products(@RequestParam(name = "title", required = false) String title, Principal principal, Model model){
         model.addAttribute("products", productService.listProducts(title));
@@ -28,6 +38,13 @@ public class ProductController {
         return "products";
     }
 
+    /**
+     * Отображает информацию о продукте.
+     *
+     * @param id    Идентификатор продукта.
+     * @param model Модель для передачи данных в представление.
+     * @return Путь к странице с информацией о продукте.
+     */
 
     @GetMapping("/product/{id}")
     public String productInfo(@PathVariable Long id, Model model){
@@ -38,8 +55,17 @@ public class ProductController {
         return "product-info";
     }
 
-
-
+    /**
+     * Создает новый продукт.
+     *
+     * @param file1     Первое изображение продукта.
+     * @param file2     Второе изображение продукта.
+     * @param file3     Третье изображение продукта.
+     * @param product   Данные о новом продукте.
+     * @param principal Информация о текущем пользователе.
+     * @return Путь для перенаправления после создания продукта.
+     * @throws IOException Исключение, возникающее при работе с файлами.
+     */
 
 
     @PostMapping("/product/create")
@@ -49,6 +75,13 @@ public class ProductController {
         return "redirect:/my/products";
     }
 
+    /**
+     * Удаляет продукт.
+     *
+     * @param id Идентификатор удаляемого продукта.
+     * @return Путь для перенаправления после удаления продукта.
+     */
+
     @PostMapping("/product/delete/{id}")
     public String deleteProduct(@PathVariable Long id) {
 
@@ -56,6 +89,14 @@ public class ProductController {
 
         return "redirect:/";
     }
+
+    /**
+     * Отображает страницу со списком продуктов пользователя.
+     *
+     * @param principal Информация о текущем пользователе.
+     * @param model     Модель для передачи данных в представление.
+     * @return Путь к странице с продуктами пользователя.
+     */
 
     @GetMapping("/my/products")
     public String userProducts(Principal principal, Model model) {

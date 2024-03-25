@@ -5083,3 +5083,557 @@ java.awt.HeadlessException: null
 2024-03-23T23:02:22.824+03:00  INFO 10548 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-03-23T23:02:22.827+03:00  INFO 10548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-03-23T23:02:22.832+03:00  INFO 10548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-24T00:14:38.935+03:00  INFO 11700 --- [main] com.example.ShopNet.ShopNetApplication   : Starting ShopNetApplication using Java 18.0.2.1 with PID 11700 (D:\java_lessons\ShopNet\target\classes started by elf in D:\java_lessons\ShopNet)
+2024-03-24T00:14:38.936+03:00  INFO 11700 --- [main] com.example.ShopNet.ShopNetApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-03-24T00:14:39.769+03:00  INFO 11700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-24T00:14:39.851+03:00  INFO 11700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 5 JPA repository interfaces.
+2024-03-24T00:14:39.926+03:00  INFO 11700 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-03-24T00:14:39.931+03:00  INFO 11700 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-03-24T00:14:40.560+03:00  INFO 11700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-24T00:14:40.570+03:00  INFO 11700 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-24T00:14:40.570+03:00  INFO 11700 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-24T00:14:40.615+03:00  INFO 11700 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-24T00:14:40.616+03:00  INFO 11700 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1643 ms
+2024-03-24T00:14:40.913+03:00  INFO 11700 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-24T00:14:40.955+03:00  INFO 11700 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-24T00:14:40.977+03:00  INFO 11700 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-24T00:14:41.116+03:00  INFO 11700 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-24T00:14:41.141+03:00  INFO 11700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-24T00:14:41.348+03:00  INFO 11700 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1fec9d33
+2024-03-24T00:14:41.349+03:00  INFO 11700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-24T00:14:42.040+03:00  INFO 11700 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-24T00:14:42.095+03:00  INFO 11700 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:14:42.713+03:00  INFO 11700 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-24T00:14:43.060+03:00  INFO 11700 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-03-24T00:14:43.125+03:00  INFO 11700 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1088b120, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b4133d0, org.springframework.security.web.context.SecurityContextHolderFilter@58453967, org.springframework.security.web.header.HeaderWriterFilter@23fed844, org.springframework.web.filter.CorsFilter@4ebefe31, org.springframework.security.web.csrf.CsrfFilter@11b26693, org.springframework.security.web.authentication.logout.LogoutFilter@8e654f7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7306f65f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@510c6b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@72117a6c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e1349cf, org.springframework.security.web.access.ExceptionTranslationFilter@6a7c0932, org.springframework.security.web.access.intercept.AuthorizationFilter@28516b2d]
+2024-03-24T00:14:43.646+03:00  INFO 11700 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:14:43.646+03:00  INFO 11700 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2024-03-24T00:14:43.646+03:00  INFO 11700 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:14:43.646+03:00  INFO 11700 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:14:43.647+03:00  INFO 11700 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 1 subscriber(s).
+2024-03-24T00:14:43.647+03:00  INFO 11700 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myTransformer.transformer'
+2024-03-24T00:14:43.647+03:00  INFO 11700 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:14:43.647+03:00  INFO 11700 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 1 subscriber(s).
+2024-03-24T00:14:43.647+03:00  INFO 11700 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myFileWriter.serviceActivator'
+2024-03-24T00:14:43.647+03:00  INFO 11700 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:14:43.647+03:00  INFO 11700 --- [main] .s.i.g.AnnotationGatewayProxyFactoryBean : started bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:14:43.664+03:00  INFO 11700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-24T00:14:43.684+03:00  INFO 11700 --- [main] com.example.ShopNet.ShopNetApplication   : Started ShopNetApplication in 5.028 seconds (process running for 5.451)
+2024-03-24T00:14:48.176+03:00  INFO 11700 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-24T00:14:48.176+03:00  INFO 11700 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-24T00:14:48.177+03:00  INFO 11700 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-24T00:15:03.684+03:00  INFO 11700 --- [http-nio-8080-exec-8] c.e.ShopNet.controllers.UnityController  : Начало обработки запроса startUnityProject для productName: 111
+2024-03-24T00:15:03.717+03:00  INFO 11700 --- [http-nio-8080-exec-8] c.e.ShopNet.controllers.UnityController  : Информация о проекте успешно прочитана из файла: index_path.json
+2024-03-24T00:15:03.717+03:00  INFO 11700 --- [http-nio-8080-exec-8] c.e.ShopNet.controllers.UnityController  : Проект Unity уже скачан. URL проекта Unity: http://localhost/unity/111/index.html
+2024-03-24T00:15:03.717+03:00  INFO 11700 --- [http-nio-8080-exec-8] c.e.ShopNet.controllers.UnityController  : Завершение обработки запроса startUnityProject для productName: 111
+2024-03-24T00:16:58.381+03:00  INFO 11700 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:16:58.381+03:00  INFO 11700 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 0 subscriber(s).
+2024-03-24T00:16:58.382+03:00  INFO 11700 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myFileWriter.serviceActivator'
+2024-03-24T00:16:58.382+03:00  INFO 11700 --- [SpringApplicationShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:16:58.382+03:00  INFO 11700 --- [SpringApplicationShutdownHook] .s.i.g.AnnotationGatewayProxyFactoryBean : stopped bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:16:58.382+03:00  INFO 11700 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:16:58.382+03:00  INFO 11700 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2024-03-24T00:16:58.382+03:00  INFO 11700 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:16:58.382+03:00  INFO 11700 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:16:58.383+03:00  INFO 11700 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 0 subscriber(s).
+2024-03-24T00:16:58.383+03:00  INFO 11700 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myTransformer.transformer'
+2024-03-24T00:16:58.386+03:00  INFO 11700 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:16:58.388+03:00  INFO 11700 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-24T00:16:58.392+03:00  INFO 11700 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-24T00:19:34.187+03:00  INFO 11824 --- [main] com.example.ShopNet.ShopNetApplication   : Starting ShopNetApplication using Java 18.0.2.1 with PID 11824 (D:\java_lessons\ShopNet\target\classes started by elf in D:\java_lessons\ShopNet)
+2024-03-24T00:19:34.189+03:00  INFO 11824 --- [main] com.example.ShopNet.ShopNetApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-03-24T00:19:35.147+03:00  INFO 11824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-24T00:19:35.234+03:00  INFO 11824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 5 JPA repository interfaces.
+2024-03-24T00:19:35.326+03:00  INFO 11824 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-03-24T00:19:35.330+03:00  INFO 11824 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-03-24T00:19:35.973+03:00  INFO 11824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-24T00:19:35.981+03:00  INFO 11824 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-24T00:19:35.982+03:00  INFO 11824 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-24T00:19:36.027+03:00  INFO 11824 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-24T00:19:36.028+03:00  INFO 11824 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1803 ms
+2024-03-24T00:19:36.453+03:00  INFO 11824 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-24T00:19:36.495+03:00  INFO 11824 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-24T00:19:36.516+03:00  INFO 11824 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-24T00:19:36.705+03:00  INFO 11824 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-24T00:19:36.738+03:00  INFO 11824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-24T00:19:37.040+03:00  INFO 11824 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@20d65767
+2024-03-24T00:19:37.042+03:00  INFO 11824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-24T00:19:37.846+03:00  INFO 11824 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-24T00:19:37.906+03:00  INFO 11824 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:19:38.523+03:00  INFO 11824 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-24T00:19:38.903+03:00  INFO 11824 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-03-24T00:19:38.973+03:00  INFO 11824 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3c9e169f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2cfc4475, org.springframework.security.web.context.SecurityContextHolderFilter@18b12df9, org.springframework.security.web.header.HeaderWriterFilter@281f2d6c, org.springframework.web.filter.CorsFilter@5319f536, org.springframework.security.web.csrf.CsrfFilter@72117a6c, org.springframework.security.web.authentication.logout.LogoutFilter@79fa9f97, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6eb06667, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5739b804, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@180466a9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c586bb6, org.springframework.security.web.access.ExceptionTranslationFilter@2b6282bb, org.springframework.security.web.access.intercept.AuthorizationFilter@77b6d94c]
+2024-03-24T00:19:39.499+03:00  INFO 11824 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:19:39.499+03:00  INFO 11824 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2024-03-24T00:19:39.499+03:00  INFO 11824 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:19:39.499+03:00  INFO 11824 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:19:39.499+03:00  INFO 11824 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 1 subscriber(s).
+2024-03-24T00:19:39.499+03:00  INFO 11824 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myTransformer.transformer'
+2024-03-24T00:19:39.500+03:00  INFO 11824 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:19:39.500+03:00  INFO 11824 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 1 subscriber(s).
+2024-03-24T00:19:39.500+03:00  INFO 11824 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myFileWriter.serviceActivator'
+2024-03-24T00:19:39.500+03:00  INFO 11824 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:19:39.500+03:00  INFO 11824 --- [main] .s.i.g.AnnotationGatewayProxyFactoryBean : started bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:19:39.513+03:00  INFO 11824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-24T00:19:39.557+03:00  INFO 11824 --- [main] com.example.ShopNet.ShopNetApplication   : Started ShopNetApplication in 5.65 seconds (process running for 6.045)
+2024-03-24T00:19:52.992+03:00  INFO 11824 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-24T00:19:52.992+03:00  INFO 11824 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-24T00:19:52.993+03:00  INFO 11824 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-24T00:20:08.866+03:00  INFO 11824 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Начало обработки запроса startUnityProject для productName: 111
+2024-03-24T00:20:08.898+03:00  INFO 11824 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Информация о проекте успешно прочитана из файла: index_path.json
+2024-03-24T00:20:08.899+03:00  INFO 11824 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Проект Unity уже скачан. URL проекта Unity: http://localhost/unity/111/index.html
+2024-03-24T00:20:08.899+03:00  INFO 11824 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Завершение обработки запроса startUnityProject для productName: 111
+2024-03-24T00:20:50.467+03:00  INFO 11824 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:20:50.467+03:00  INFO 11824 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 0 subscriber(s).
+2024-03-24T00:20:50.468+03:00  INFO 11824 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myFileWriter.serviceActivator'
+2024-03-24T00:20:50.468+03:00  INFO 11824 --- [SpringApplicationShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:20:50.468+03:00  INFO 11824 --- [SpringApplicationShutdownHook] .s.i.g.AnnotationGatewayProxyFactoryBean : stopped bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:20:50.468+03:00  INFO 11824 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:20:50.468+03:00  INFO 11824 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2024-03-24T00:20:50.469+03:00  INFO 11824 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:20:50.469+03:00  INFO 11824 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:20:50.469+03:00  INFO 11824 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 0 subscriber(s).
+2024-03-24T00:20:50.469+03:00  INFO 11824 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myTransformer.transformer'
+2024-03-24T00:20:50.473+03:00  INFO 11824 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:20:50.475+03:00  INFO 11824 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-24T00:20:50.479+03:00  INFO 11824 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-24T00:31:41.002+03:00  INFO 7644 --- [main] com.example.ShopNet.ShopNetApplication   : Starting ShopNetApplication using Java 18.0.2.1 with PID 7644 (D:\java_lessons\ShopNet\target\classes started by elf in D:\java_lessons\ShopNet)
+2024-03-24T00:31:41.004+03:00  INFO 7644 --- [main] com.example.ShopNet.ShopNetApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-03-24T00:31:41.799+03:00  INFO 7644 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-24T00:31:41.883+03:00  INFO 7644 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 5 JPA repository interfaces.
+2024-03-24T00:31:41.959+03:00  INFO 7644 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-03-24T00:31:41.964+03:00  INFO 7644 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-03-24T00:31:42.567+03:00  INFO 7644 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-24T00:31:42.577+03:00  INFO 7644 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-24T00:31:42.578+03:00  INFO 7644 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-24T00:31:42.626+03:00  INFO 7644 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-24T00:31:42.627+03:00  INFO 7644 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1581 ms
+2024-03-24T00:31:42.921+03:00  INFO 7644 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-24T00:31:42.956+03:00  INFO 7644 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-24T00:31:42.978+03:00  INFO 7644 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-24T00:31:43.120+03:00  INFO 7644 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-24T00:31:43.144+03:00  INFO 7644 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-24T00:31:43.359+03:00  INFO 7644 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@233ece92
+2024-03-24T00:31:43.360+03:00  INFO 7644 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-24T00:31:44.064+03:00  INFO 7644 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-24T00:31:44.119+03:00  INFO 7644 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:31:44.731+03:00  INFO 7644 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-24T00:31:45.058+03:00  INFO 7644 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-03-24T00:31:45.120+03:00  INFO 7644 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@259d5279, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c9e169f, org.springframework.security.web.context.SecurityContextHolderFilter@5739b804, org.springframework.security.web.header.HeaderWriterFilter@4bb747c1, org.springframework.web.filter.CorsFilter@2cfc4475, org.springframework.security.web.csrf.CsrfFilter@5808573f, org.springframework.security.web.authentication.logout.LogoutFilter@1dc9aba0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5caf9ea4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2670435, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e22fdc0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5319f536, org.springframework.security.web.access.ExceptionTranslationFilter@12e4822b, org.springframework.security.web.access.intercept.AuthorizationFilter@684c2c57]
+2024-03-24T00:31:45.580+03:00  INFO 7644 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:31:45.580+03:00  INFO 7644 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2024-03-24T00:31:45.581+03:00  INFO 7644 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:31:45.581+03:00  INFO 7644 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:31:45.581+03:00  INFO 7644 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 1 subscriber(s).
+2024-03-24T00:31:45.581+03:00  INFO 7644 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myTransformer.transformer'
+2024-03-24T00:31:45.581+03:00  INFO 7644 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:31:45.581+03:00  INFO 7644 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 1 subscriber(s).
+2024-03-24T00:31:45.581+03:00  INFO 7644 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myFileWriter.serviceActivator'
+2024-03-24T00:31:45.581+03:00  INFO 7644 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:31:45.581+03:00  INFO 7644 --- [main] .s.i.g.AnnotationGatewayProxyFactoryBean : started bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:31:45.595+03:00  INFO 7644 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-24T00:31:45.617+03:00  INFO 7644 --- [main] com.example.ShopNet.ShopNetApplication   : Started ShopNetApplication in 4.88 seconds (process running for 5.254)
+2024-03-24T00:31:53.463+03:00  INFO 7644 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-24T00:31:53.464+03:00  INFO 7644 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-24T00:31:53.465+03:00  INFO 7644 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-24T00:32:06.812+03:00  INFO 7644 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Начало обработки запроса startUnityProject для productName: 111
+2024-03-24T00:32:06.850+03:00  INFO 7644 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Информация о проекте успешно прочитана из файла: index_path.json
+2024-03-24T00:32:06.850+03:00  INFO 7644 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Проект Unity уже скачан. URL проекта Unity: http://localhost/unity/111/index.html
+2024-03-24T00:32:06.851+03:00  INFO 7644 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Завершение обработки запроса startUnityProject для productName: 111
+2024-03-24T00:32:50.579+03:00  INFO 7644 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:32:50.579+03:00  INFO 7644 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 0 subscriber(s).
+2024-03-24T00:32:50.580+03:00  INFO 7644 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myFileWriter.serviceActivator'
+2024-03-24T00:32:50.580+03:00  INFO 7644 --- [SpringApplicationShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:32:50.580+03:00  INFO 7644 --- [SpringApplicationShutdownHook] .s.i.g.AnnotationGatewayProxyFactoryBean : stopped bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:32:50.580+03:00  INFO 7644 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:32:50.580+03:00  INFO 7644 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2024-03-24T00:32:50.581+03:00  INFO 7644 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:32:50.581+03:00  INFO 7644 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:32:50.581+03:00  INFO 7644 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 0 subscriber(s).
+2024-03-24T00:32:50.581+03:00  INFO 7644 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myTransformer.transformer'
+2024-03-24T00:32:50.584+03:00  INFO 7644 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:32:50.586+03:00  INFO 7644 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-24T00:32:50.591+03:00  INFO 7644 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-24T00:37:12.773+03:00  INFO 7256 --- [main] com.example.ShopNet.ShopNetApplication   : Starting ShopNetApplication using Java 18.0.2.1 with PID 7256 (D:\java_lessons\ShopNet\target\classes started by elf in D:\java_lessons\ShopNet)
+2024-03-24T00:37:12.778+03:00  INFO 7256 --- [main] com.example.ShopNet.ShopNetApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-03-24T00:37:13.596+03:00  INFO 7256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-24T00:37:13.680+03:00  INFO 7256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 5 JPA repository interfaces.
+2024-03-24T00:37:13.753+03:00  INFO 7256 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-03-24T00:37:13.762+03:00  INFO 7256 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-03-24T00:37:14.353+03:00  INFO 7256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-24T00:37:14.365+03:00  INFO 7256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-24T00:37:14.366+03:00  INFO 7256 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-24T00:37:14.416+03:00  INFO 7256 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-24T00:37:14.417+03:00  INFO 7256 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1607 ms
+2024-03-24T00:37:14.733+03:00  INFO 7256 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-24T00:37:14.763+03:00  INFO 7256 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-24T00:37:14.783+03:00  INFO 7256 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-24T00:37:14.922+03:00  INFO 7256 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-24T00:37:14.941+03:00  INFO 7256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-24T00:37:15.159+03:00  INFO 7256 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@372f7bc
+2024-03-24T00:37:15.160+03:00  INFO 7256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-24T00:37:15.854+03:00  INFO 7256 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-24T00:37:15.911+03:00  INFO 7256 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:37:16.558+03:00  INFO 7256 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-24T00:37:16.883+03:00  INFO 7256 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-03-24T00:37:16.939+03:00  INFO 7256 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3f040f9e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77cf9b08, org.springframework.security.web.context.SecurityContextHolderFilter@2db55dec, org.springframework.security.web.header.HeaderWriterFilter@45b221c7, org.springframework.web.filter.CorsFilter@20326436, org.springframework.security.web.csrf.CsrfFilter@7dcd8e74, org.springframework.security.web.authentication.logout.LogoutFilter@43b9ef41, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@33212ae6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@200ef05b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7cb9295f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5faa0c51, org.springframework.security.web.access.ExceptionTranslationFilter@13088030, org.springframework.security.web.access.intercept.AuthorizationFilter@2f81d7f]
+2024-03-24T00:37:17.391+03:00  INFO 7256 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:37:17.391+03:00  INFO 7256 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2024-03-24T00:37:17.392+03:00  INFO 7256 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:37:17.392+03:00  INFO 7256 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:37:17.392+03:00  INFO 7256 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 1 subscriber(s).
+2024-03-24T00:37:17.392+03:00  INFO 7256 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myTransformer.transformer'
+2024-03-24T00:37:17.392+03:00  INFO 7256 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:37:17.392+03:00  INFO 7256 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 1 subscriber(s).
+2024-03-24T00:37:17.392+03:00  INFO 7256 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myFileWriter.serviceActivator'
+2024-03-24T00:37:17.392+03:00  INFO 7256 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:37:17.392+03:00  INFO 7256 --- [main] .s.i.g.AnnotationGatewayProxyFactoryBean : started bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:37:17.406+03:00  INFO 7256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-24T00:37:17.432+03:00  INFO 7256 --- [main] com.example.ShopNet.ShopNetApplication   : Started ShopNetApplication in 4.922 seconds (process running for 5.297)
+2024-03-24T00:37:21.661+03:00  INFO 7256 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-24T00:37:21.662+03:00  INFO 7256 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-24T00:37:21.663+03:00  INFO 7256 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-03-24T00:38:05.139+03:00  INFO 7256 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:38:05.139+03:00  INFO 7256 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 0 subscriber(s).
+2024-03-24T00:38:05.140+03:00  INFO 7256 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myFileWriter.serviceActivator'
+2024-03-24T00:38:05.140+03:00  INFO 7256 --- [SpringApplicationShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:38:05.140+03:00  INFO 7256 --- [SpringApplicationShutdownHook] .s.i.g.AnnotationGatewayProxyFactoryBean : stopped bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:38:05.140+03:00  INFO 7256 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:38:05.140+03:00  INFO 7256 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2024-03-24T00:38:05.140+03:00  INFO 7256 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:38:05.140+03:00  INFO 7256 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:38:05.140+03:00  INFO 7256 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 0 subscriber(s).
+2024-03-24T00:38:05.140+03:00  INFO 7256 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myTransformer.transformer'
+2024-03-24T00:38:05.144+03:00  INFO 7256 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:38:05.145+03:00  INFO 7256 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-24T00:38:05.151+03:00  INFO 7256 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-24T00:38:08.112+03:00  INFO 1732 --- [main] com.example.ShopNet.ShopNetApplication   : Starting ShopNetApplication using Java 18.0.2.1 with PID 1732 (D:\java_lessons\ShopNet\target\classes started by elf in D:\java_lessons\ShopNet)
+2024-03-24T00:38:08.118+03:00  INFO 1732 --- [main] com.example.ShopNet.ShopNetApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-03-24T00:38:09.096+03:00  INFO 1732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-24T00:38:09.201+03:00  INFO 1732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 5 JPA repository interfaces.
+2024-03-24T00:38:09.293+03:00  INFO 1732 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-03-24T00:38:09.298+03:00  INFO 1732 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-03-24T00:38:10.007+03:00  INFO 1732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-24T00:38:10.017+03:00  INFO 1732 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-24T00:38:10.017+03:00  INFO 1732 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-24T00:38:10.071+03:00  INFO 1732 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-24T00:38:10.072+03:00  INFO 1732 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1921 ms
+2024-03-24T00:38:10.474+03:00  INFO 1732 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-24T00:38:10.508+03:00  INFO 1732 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-24T00:38:10.530+03:00  INFO 1732 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-24T00:38:10.664+03:00  INFO 1732 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-24T00:38:10.681+03:00  INFO 1732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-24T00:38:10.890+03:00  INFO 1732 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55665086
+2024-03-24T00:38:10.891+03:00  INFO 1732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-24T00:38:11.674+03:00  INFO 1732 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-24T00:38:11.730+03:00  INFO 1732 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:38:12.413+03:00  INFO 1732 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-24T00:38:12.803+03:00  INFO 1732 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-03-24T00:38:12.872+03:00  INFO 1732 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1b47e09c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79fa9f97, org.springframework.security.web.context.SecurityContextHolderFilter@510c6b9, org.springframework.security.web.header.HeaderWriterFilter@598b15ba, org.springframework.web.filter.CorsFilter@400cb9ef, org.springframework.security.web.csrf.CsrfFilter@615d74e9, org.springframework.security.web.authentication.logout.LogoutFilter@281f2d6c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@616e7884, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71b75f99, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5808573f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1405dd10, org.springframework.security.web.access.ExceptionTranslationFilter@4ad113d6, org.springframework.security.web.access.intercept.AuthorizationFilter@50ade311]
+2024-03-24T00:38:13.329+03:00  INFO 1732 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:38:13.330+03:00  INFO 1732 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2024-03-24T00:38:13.331+03:00  INFO 1732 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:38:13.331+03:00  INFO 1732 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:38:13.331+03:00  INFO 1732 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 1 subscriber(s).
+2024-03-24T00:38:13.331+03:00  INFO 1732 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myTransformer.transformer'
+2024-03-24T00:38:13.331+03:00  INFO 1732 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:38:13.331+03:00  INFO 1732 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 1 subscriber(s).
+2024-03-24T00:38:13.331+03:00  INFO 1732 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myFileWriter.serviceActivator'
+2024-03-24T00:38:13.331+03:00  INFO 1732 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:38:13.332+03:00  INFO 1732 --- [main] .s.i.g.AnnotationGatewayProxyFactoryBean : started bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:38:13.344+03:00  INFO 1732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-24T00:38:13.365+03:00  INFO 1732 --- [main] com.example.ShopNet.ShopNetApplication   : Started ShopNetApplication in 5.518 seconds (process running for 5.875)
+2024-03-24T00:38:20.621+03:00  INFO 1732 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-24T00:38:20.621+03:00  INFO 1732 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-24T00:38:20.622+03:00  INFO 1732 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-24T00:38:56.490+03:00  INFO 1732 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:38:56.490+03:00  INFO 1732 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 0 subscriber(s).
+2024-03-24T00:38:56.491+03:00  INFO 1732 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myFileWriter.serviceActivator'
+2024-03-24T00:38:56.491+03:00  INFO 1732 --- [SpringApplicationShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:38:56.491+03:00  INFO 1732 --- [SpringApplicationShutdownHook] .s.i.g.AnnotationGatewayProxyFactoryBean : stopped bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:38:56.491+03:00  INFO 1732 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:38:56.491+03:00  INFO 1732 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2024-03-24T00:38:56.491+03:00  INFO 1732 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:38:56.491+03:00  INFO 1732 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:38:56.491+03:00  INFO 1732 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 0 subscriber(s).
+2024-03-24T00:38:56.491+03:00  INFO 1732 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myTransformer.transformer'
+2024-03-24T00:38:56.495+03:00  INFO 1732 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:38:56.498+03:00  INFO 1732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-24T00:38:56.503+03:00  INFO 1732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-24T00:40:02.080+03:00  INFO 2968 --- [main] com.example.ShopNet.ShopNetApplication   : Starting ShopNetApplication using Java 18.0.2.1 with PID 2968 (D:\java_lessons\ShopNet\target\classes started by elf in D:\java_lessons\ShopNet)
+2024-03-24T00:40:02.083+03:00  INFO 2968 --- [main] com.example.ShopNet.ShopNetApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-03-24T00:40:02.893+03:00  INFO 2968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-24T00:40:02.995+03:00  INFO 2968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 5 JPA repository interfaces.
+2024-03-24T00:40:03.073+03:00  INFO 2968 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-03-24T00:40:03.077+03:00  INFO 2968 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-03-24T00:40:03.799+03:00  INFO 2968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-24T00:40:03.807+03:00  INFO 2968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-24T00:40:03.807+03:00  INFO 2968 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-24T00:40:03.853+03:00  INFO 2968 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-24T00:40:03.854+03:00  INFO 2968 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1737 ms
+2024-03-24T00:40:04.170+03:00  INFO 2968 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-24T00:40:04.212+03:00  INFO 2968 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-24T00:40:04.240+03:00  INFO 2968 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-24T00:40:04.410+03:00  INFO 2968 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-24T00:40:04.431+03:00  INFO 2968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-24T00:40:04.632+03:00  INFO 2968 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3987a1e8
+2024-03-24T00:40:04.633+03:00  INFO 2968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-24T00:40:05.432+03:00  INFO 2968 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-24T00:40:05.490+03:00  INFO 2968 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:40:06.255+03:00  INFO 2968 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-24T00:40:06.608+03:00  INFO 2968 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-03-24T00:40:06.701+03:00  INFO 2968 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5125558b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8c940e2, org.springframework.security.web.context.SecurityContextHolderFilter@5ee4aad3, org.springframework.security.web.header.HeaderWriterFilter@7306f65f, org.springframework.web.filter.CorsFilter@6092d41, org.springframework.security.web.csrf.CsrfFilter@2b6282bb, org.springframework.security.web.authentication.logout.LogoutFilter@78f18a87, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@78a03662, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6b4133d0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b47e09c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a263df9, org.springframework.security.web.access.ExceptionTranslationFilter@43b9ef41, org.springframework.security.web.access.intercept.AuthorizationFilter@1eaf95d2]
+2024-03-24T00:40:07.225+03:00  INFO 2968 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:40:07.225+03:00  INFO 2968 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2024-03-24T00:40:07.225+03:00  INFO 2968 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:40:07.225+03:00  INFO 2968 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:40:07.226+03:00  INFO 2968 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 1 subscriber(s).
+2024-03-24T00:40:07.226+03:00  INFO 2968 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myTransformer.transformer'
+2024-03-24T00:40:07.226+03:00  INFO 2968 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:40:07.226+03:00  INFO 2968 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 1 subscriber(s).
+2024-03-24T00:40:07.226+03:00  INFO 2968 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myFileWriter.serviceActivator'
+2024-03-24T00:40:07.226+03:00  INFO 2968 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:40:07.226+03:00  INFO 2968 --- [main] .s.i.g.AnnotationGatewayProxyFactoryBean : started bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:40:07.238+03:00  INFO 2968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-24T00:40:07.260+03:00  INFO 2968 --- [main] com.example.ShopNet.ShopNetApplication   : Started ShopNetApplication in 5.436 seconds (process running for 5.798)
+2024-03-24T00:40:13.275+03:00  INFO 2968 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-24T00:40:13.275+03:00  INFO 2968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-24T00:40:13.277+03:00  INFO 2968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-24T00:40:54.441+03:00  INFO 2968 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:40:54.442+03:00  INFO 2968 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 0 subscriber(s).
+2024-03-24T00:40:54.442+03:00  INFO 2968 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myFileWriter.serviceActivator'
+2024-03-24T00:40:54.442+03:00  INFO 2968 --- [SpringApplicationShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:40:54.442+03:00  INFO 2968 --- [SpringApplicationShutdownHook] .s.i.g.AnnotationGatewayProxyFactoryBean : stopped bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:40:54.443+03:00  INFO 2968 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:40:54.443+03:00  INFO 2968 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2024-03-24T00:40:54.443+03:00  INFO 2968 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:40:54.443+03:00  INFO 2968 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:40:54.443+03:00  INFO 2968 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 0 subscriber(s).
+2024-03-24T00:40:54.443+03:00  INFO 2968 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myTransformer.transformer'
+2024-03-24T00:40:54.446+03:00  INFO 2968 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:40:54.448+03:00  INFO 2968 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-24T00:40:54.452+03:00  INFO 2968 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-24T00:41:07.322+03:00  INFO 4392 --- [main] com.example.ShopNet.ShopNetApplication   : Starting ShopNetApplication using Java 18.0.2.1 with PID 4392 (D:\java_lessons\ShopNet\target\classes started by elf in D:\java_lessons\ShopNet)
+2024-03-24T00:41:07.324+03:00  INFO 4392 --- [main] com.example.ShopNet.ShopNetApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-03-24T00:41:08.105+03:00  INFO 4392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-24T00:41:08.195+03:00  INFO 4392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 5 JPA repository interfaces.
+2024-03-24T00:41:08.272+03:00  INFO 4392 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-03-24T00:41:08.278+03:00  INFO 4392 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-03-24T00:41:08.885+03:00  INFO 4392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-24T00:41:08.894+03:00  INFO 4392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-24T00:41:08.894+03:00  INFO 4392 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-24T00:41:08.944+03:00  INFO 4392 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-24T00:41:08.945+03:00  INFO 4392 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1587 ms
+2024-03-24T00:41:09.246+03:00  INFO 4392 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-24T00:41:09.278+03:00  INFO 4392 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-24T00:41:09.295+03:00  INFO 4392 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-24T00:41:09.424+03:00  INFO 4392 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-24T00:41:09.439+03:00  INFO 4392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-24T00:41:09.638+03:00  INFO 4392 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@301770d9
+2024-03-24T00:41:09.639+03:00  INFO 4392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-24T00:41:10.338+03:00  INFO 4392 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-24T00:41:10.392+03:00  INFO 4392 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:41:10.998+03:00  INFO 4392 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-24T00:41:11.347+03:00  INFO 4392 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-03-24T00:41:11.408+03:00  INFO 4392 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4e1349cf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b47e09c, org.springframework.security.web.context.SecurityContextHolderFilter@746f5752, org.springframework.security.web.header.HeaderWriterFilter@c62d08a, org.springframework.web.filter.CorsFilter@79fa9f97, org.springframework.security.web.csrf.CsrfFilter@13c147f8, org.springframework.security.web.authentication.logout.LogoutFilter@12e4822b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@251ed676, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72117a6c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21339b6f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@400cb9ef, org.springframework.security.web.access.ExceptionTranslationFilter@3294b641, org.springframework.security.web.access.intercept.AuthorizationFilter@7306f65f]
+2024-03-24T00:41:11.878+03:00  INFO 4392 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:41:11.878+03:00  INFO 4392 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2024-03-24T00:41:11.879+03:00  INFO 4392 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:41:11.879+03:00  INFO 4392 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:41:11.879+03:00  INFO 4392 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 1 subscriber(s).
+2024-03-24T00:41:11.879+03:00  INFO 4392 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myTransformer.transformer'
+2024-03-24T00:41:11.879+03:00  INFO 4392 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:41:11.879+03:00  INFO 4392 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 1 subscriber(s).
+2024-03-24T00:41:11.879+03:00  INFO 4392 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myFileWriter.serviceActivator'
+2024-03-24T00:41:11.879+03:00  INFO 4392 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:41:11.880+03:00  INFO 4392 --- [main] .s.i.g.AnnotationGatewayProxyFactoryBean : started bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:41:11.892+03:00  INFO 4392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-24T00:41:11.914+03:00  INFO 4392 --- [main] com.example.ShopNet.ShopNetApplication   : Started ShopNetApplication in 4.861 seconds (process running for 5.22)
+2024-03-24T00:41:15.576+03:00  INFO 4392 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-24T00:41:15.577+03:00  INFO 4392 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-24T00:41:15.578+03:00  INFO 4392 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-24T00:41:20.818+03:00  INFO 4392 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Начало обработки запроса startUnityProject для productName: 111
+2024-03-24T00:41:20.851+03:00  INFO 4392 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Информация о проекте успешно прочитана из файла: index_path.json
+2024-03-24T00:41:20.851+03:00  INFO 4392 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Проект Unity уже скачан. URL проекта Unity: http://localhost/unity/111/index.html
+2024-03-24T00:41:20.855+03:00  INFO 4392 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Завершение обработки запроса startUnityProject для productName: 111
+2024-03-24T00:46:37.659+03:00  INFO 4392 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:46:37.659+03:00  INFO 4392 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 0 subscriber(s).
+2024-03-24T00:46:37.660+03:00  INFO 4392 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myFileWriter.serviceActivator'
+2024-03-24T00:46:37.660+03:00  INFO 4392 --- [SpringApplicationShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:46:37.660+03:00  INFO 4392 --- [SpringApplicationShutdownHook] .s.i.g.AnnotationGatewayProxyFactoryBean : stopped bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:46:37.660+03:00  INFO 4392 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:46:37.660+03:00  INFO 4392 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2024-03-24T00:46:37.660+03:00  INFO 4392 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:46:37.660+03:00  INFO 4392 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:46:37.660+03:00  INFO 4392 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 0 subscriber(s).
+2024-03-24T00:46:37.660+03:00  INFO 4392 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myTransformer.transformer'
+2024-03-24T00:46:37.663+03:00  INFO 4392 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:46:37.665+03:00  INFO 4392 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-24T00:46:37.669+03:00  INFO 4392 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-24T00:50:07.089+03:00  INFO 8716 --- [main] com.example.ShopNet.ShopNetApplication   : Starting ShopNetApplication using Java 18.0.2.1 with PID 8716 (D:\java_lessons\ShopNet\target\classes started by elf in D:\java_lessons\ShopNet)
+2024-03-24T00:50:07.091+03:00  INFO 8716 --- [main] com.example.ShopNet.ShopNetApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-03-24T00:50:07.945+03:00  INFO 8716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-24T00:50:08.027+03:00  INFO 8716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 5 JPA repository interfaces.
+2024-03-24T00:50:08.104+03:00  INFO 8716 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-03-24T00:50:08.110+03:00  INFO 8716 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-03-24T00:50:08.715+03:00  INFO 8716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-24T00:50:08.725+03:00  INFO 8716 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-24T00:50:08.725+03:00  INFO 8716 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-24T00:50:08.773+03:00  INFO 8716 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-24T00:50:08.774+03:00  INFO 8716 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1650 ms
+2024-03-24T00:50:09.080+03:00  INFO 8716 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-24T00:50:09.116+03:00  INFO 8716 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-24T00:50:09.139+03:00  INFO 8716 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-24T00:50:09.285+03:00  INFO 8716 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-24T00:50:09.306+03:00  INFO 8716 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-24T00:50:09.527+03:00  INFO 8716 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ae4c424
+2024-03-24T00:50:09.528+03:00  INFO 8716 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-24T00:50:10.316+03:00  INFO 8716 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-24T00:50:10.385+03:00  INFO 8716 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:50:11.206+03:00  INFO 8716 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-24T00:50:11.585+03:00  INFO 8716 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-03-24T00:50:11.659+03:00  INFO 8716 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5caf9ea4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@55882ff2, org.springframework.security.web.context.SecurityContextHolderFilter@1a927db2, org.springframework.security.web.header.HeaderWriterFilter@2dacaa7f, org.springframework.web.filter.CorsFilter@47db20e0, org.springframework.security.web.csrf.CsrfFilter@4c666872, org.springframework.security.web.authentication.logout.LogoutFilter@4e1349cf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5b51a4c7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@370e5bb9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f48adcc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@78131a47, org.springframework.security.web.access.ExceptionTranslationFilter@474aeac5, org.springframework.security.web.access.intercept.AuthorizationFilter@4bd1541f]
+2024-03-24T00:50:12.221+03:00  INFO 8716 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:50:12.222+03:00  INFO 8716 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2024-03-24T00:50:12.222+03:00  INFO 8716 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:50:12.222+03:00  INFO 8716 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:50:12.222+03:00  INFO 8716 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 1 subscriber(s).
+2024-03-24T00:50:12.223+03:00  INFO 8716 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myTransformer.transformer'
+2024-03-24T00:50:12.223+03:00  INFO 8716 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:50:12.223+03:00  INFO 8716 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 1 subscriber(s).
+2024-03-24T00:50:12.223+03:00  INFO 8716 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myFileWriter.serviceActivator'
+2024-03-24T00:50:12.223+03:00  INFO 8716 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:50:12.223+03:00  INFO 8716 --- [main] .s.i.g.AnnotationGatewayProxyFactoryBean : started bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:50:12.239+03:00  INFO 8716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-24T00:50:12.268+03:00  INFO 8716 --- [main] com.example.ShopNet.ShopNetApplication   : Started ShopNetApplication in 5.428 seconds (process running for 5.788)
+2024-03-24T00:50:12.289+03:00  INFO 8716 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-24T00:50:12.289+03:00  INFO 8716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-24T00:50:12.291+03:00  INFO 8716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-03-24T00:50:25.648+03:00  INFO 8716 --- [http-nio-8080-exec-7] c.e.ShopNet.controllers.UnityController  : Начало обработки запроса startUnityProject для productName: 111
+2024-03-24T00:50:25.682+03:00  INFO 8716 --- [http-nio-8080-exec-7] c.e.ShopNet.controllers.UnityController  : Информация о проекте успешно прочитана из файла: index_path.json
+2024-03-24T00:50:25.683+03:00  INFO 8716 --- [http-nio-8080-exec-7] c.e.ShopNet.controllers.UnityController  : Проект Unity уже скачан. URL проекта Unity: http://localhost/unity/111/index.html
+2024-03-24T00:50:25.683+03:00  INFO 8716 --- [http-nio-8080-exec-7] c.e.ShopNet.controllers.UnityController  : Завершение обработки запроса startUnityProject для productName: 111
+2024-03-24T00:51:39.448+03:00  INFO 8716 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:51:39.448+03:00  INFO 8716 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 0 subscriber(s).
+2024-03-24T00:51:39.449+03:00  INFO 8716 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myFileWriter.serviceActivator'
+2024-03-24T00:51:39.449+03:00  INFO 8716 --- [SpringApplicationShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:51:39.449+03:00  INFO 8716 --- [SpringApplicationShutdownHook] .s.i.g.AnnotationGatewayProxyFactoryBean : stopped bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:51:39.450+03:00  INFO 8716 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:51:39.450+03:00  INFO 8716 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2024-03-24T00:51:39.450+03:00  INFO 8716 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:51:39.450+03:00  INFO 8716 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:51:39.450+03:00  INFO 8716 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 0 subscriber(s).
+2024-03-24T00:51:39.450+03:00  INFO 8716 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myTransformer.transformer'
+2024-03-24T00:51:39.454+03:00  INFO 8716 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:51:39.456+03:00  INFO 8716 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-24T00:51:39.461+03:00  INFO 8716 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-24T00:59:27.355+03:00  INFO 1440 --- [main] com.example.ShopNet.ShopNetApplication   : Starting ShopNetApplication using Java 18.0.2.1 with PID 1440 (D:\java_lessons\ShopNet\target\classes started by elf in D:\java_lessons\ShopNet)
+2024-03-24T00:59:27.357+03:00  INFO 1440 --- [main] com.example.ShopNet.ShopNetApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-03-24T00:59:28.145+03:00  INFO 1440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-24T00:59:28.233+03:00  INFO 1440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 5 JPA repository interfaces.
+2024-03-24T00:59:28.317+03:00  INFO 1440 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-03-24T00:59:28.322+03:00  INFO 1440 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-03-24T00:59:28.951+03:00  INFO 1440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-24T00:59:28.962+03:00  INFO 1440 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-24T00:59:28.963+03:00  INFO 1440 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-24T00:59:29.018+03:00  INFO 1440 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-24T00:59:29.019+03:00  INFO 1440 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1631 ms
+2024-03-24T00:59:29.323+03:00  INFO 1440 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-24T00:59:29.356+03:00  INFO 1440 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-24T00:59:29.375+03:00  INFO 1440 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-24T00:59:29.523+03:00  INFO 1440 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-24T00:59:29.543+03:00  INFO 1440 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-24T00:59:29.751+03:00  INFO 1440 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@237aba92
+2024-03-24T00:59:29.752+03:00  INFO 1440 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-24T00:59:30.480+03:00  INFO 1440 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-24T00:59:30.539+03:00  INFO 1440 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T00:59:31.299+03:00  INFO 1440 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-24T00:59:31.698+03:00  INFO 1440 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-03-24T00:59:31.763+03:00  INFO 1440 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3f040f9e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77cf9b08, org.springframework.security.web.context.SecurityContextHolderFilter@2db55dec, org.springframework.security.web.header.HeaderWriterFilter@45b221c7, org.springframework.web.filter.CorsFilter@20326436, org.springframework.security.web.csrf.CsrfFilter@7dcd8e74, org.springframework.security.web.authentication.logout.LogoutFilter@43b9ef41, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@33212ae6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@200ef05b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7cb9295f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5faa0c51, org.springframework.security.web.access.ExceptionTranslationFilter@13088030, org.springframework.security.web.access.intercept.AuthorizationFilter@2f81d7f]
+2024-03-24T00:59:32.346+03:00  INFO 1440 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T00:59:32.347+03:00  INFO 1440 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2024-03-24T00:59:32.347+03:00  INFO 1440 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-03-24T00:59:32.347+03:00  INFO 1440 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T00:59:32.347+03:00  INFO 1440 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 1 subscriber(s).
+2024-03-24T00:59:32.347+03:00  INFO 1440 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myTransformer.transformer'
+2024-03-24T00:59:32.347+03:00  INFO 1440 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T00:59:32.347+03:00  INFO 1440 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 1 subscriber(s).
+2024-03-24T00:59:32.348+03:00  INFO 1440 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myFileWriter.serviceActivator'
+2024-03-24T00:59:32.348+03:00  INFO 1440 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T00:59:32.348+03:00  INFO 1440 --- [main] .s.i.g.AnnotationGatewayProxyFactoryBean : started bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T00:59:32.361+03:00  INFO 1440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-24T00:59:32.383+03:00  INFO 1440 --- [main] com.example.ShopNet.ShopNetApplication   : Started ShopNetApplication in 5.28 seconds (process running for 5.648)
+2024-03-24T00:59:33.254+03:00  INFO 1440 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-24T00:59:33.254+03:00  INFO 1440 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-24T00:59:33.255+03:00  INFO 1440 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-24T00:59:44.839+03:00 ERROR 1440 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Apache не работает
+2024-03-24T00:59:44.839+03:00  INFO 1440 --- [http-nio-8080-exec-5] c.e.ShopNet.controllers.UnityController  : Завершение обработки запроса startUnityProject для productName: 111
+2024-03-24T01:00:01.087+03:00 ERROR 1440 --- [http-nio-8080-exec-8] c.e.ShopNet.controllers.UnityController  : Apache не работает
+2024-03-24T01:00:01.087+03:00  INFO 1440 --- [http-nio-8080-exec-8] c.e.ShopNet.controllers.UnityController  : Завершение обработки запроса startUnityProject для productName: 111
+2024-03-24T01:00:06.170+03:00  INFO 1440 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-24T01:00:06.170+03:00  INFO 1440 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 0 subscriber(s).
+2024-03-24T01:00:06.171+03:00  INFO 1440 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myFileWriter.serviceActivator'
+2024-03-24T01:00:06.172+03:00  INFO 1440 --- [SpringApplicationShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'fileGateAway#writeToFife(String, String)'
+2024-03-24T01:00:06.172+03:00  INFO 1440 --- [SpringApplicationShutdownHook] .s.i.g.AnnotationGatewayProxyFactoryBean : stopped bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-24T01:00:06.172+03:00  INFO 1440 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-24T01:00:06.172+03:00  INFO 1440 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2024-03-24T01:00:06.172+03:00  INFO 1440 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-03-24T01:00:06.172+03:00  INFO 1440 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-24T01:00:06.172+03:00  INFO 1440 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 0 subscriber(s).
+2024-03-24T01:00:06.172+03:00  INFO 1440 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myTransformer.transformer'
+2024-03-24T01:00:06.176+03:00  INFO 1440 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-24T01:00:06.178+03:00  INFO 1440 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-24T01:00:06.182+03:00  INFO 1440 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-25T15:15:34.799+03:00  INFO 1160 --- [main] com.example.ShopNet.ShopNetApplication   : Starting ShopNetApplication using Java 18.0.2.1 with PID 1160 (D:\java_lessons\ShopNet\target\classes started by elf in D:\java_lessons\ShopNet)
+2024-03-25T15:15:34.801+03:00  INFO 1160 --- [main] com.example.ShopNet.ShopNetApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-03-25T15:15:36.027+03:00  INFO 1160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-25T15:15:36.146+03:00  INFO 1160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 5 JPA repository interfaces.
+2024-03-25T15:15:36.270+03:00  INFO 1160 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2024-03-25T15:15:36.277+03:00  INFO 1160 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2024-03-25T15:15:36.997+03:00  INFO 1160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-25T15:15:37.008+03:00  INFO 1160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-25T15:15:37.008+03:00  INFO 1160 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-25T15:15:37.062+03:00  INFO 1160 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-25T15:15:37.063+03:00  INFO 1160 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2206 ms
+2024-03-25T15:15:37.459+03:00  INFO 1160 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-25T15:15:37.536+03:00  INFO 1160 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-25T15:15:37.565+03:00  INFO 1160 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-25T15:15:37.824+03:00  INFO 1160 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-25T15:15:37.852+03:00  INFO 1160 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-25T15:15:38.173+03:00  INFO 1160 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@250e8712
+2024-03-25T15:15:38.180+03:00  INFO 1160 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-25T15:15:39.282+03:00  INFO 1160 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-25T15:15:39.357+03:00  INFO 1160 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-25T15:15:40.083+03:00  INFO 1160 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-25T15:15:40.467+03:00  INFO 1160 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2024-03-25T15:15:40.522+03:00  INFO 1160 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1c586bb6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@503eac4c, org.springframework.security.web.context.SecurityContextHolderFilter@370e5bb9, org.springframework.security.web.header.HeaderWriterFilter@2c5157c9, org.springframework.web.filter.CorsFilter@1eaf95d2, org.springframework.security.web.csrf.CsrfFilter@e6d9c25, org.springframework.security.web.authentication.logout.LogoutFilter@1405dd10, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5869f15f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6adee80f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@682bff78, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2836374, org.springframework.security.web.access.ExceptionTranslationFilter@18ea9bec, org.springframework.security.web.access.intercept.AuthorizationFilter@55882ff2]
+2024-03-25T15:15:41.029+03:00  INFO 1160 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-25T15:15:41.029+03:00  INFO 1160 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2024-03-25T15:15:41.030+03:00  INFO 1160 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2024-03-25T15:15:41.030+03:00  INFO 1160 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-25T15:15:41.030+03:00  INFO 1160 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 1 subscriber(s).
+2024-03-25T15:15:41.030+03:00  INFO 1160 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myTransformer.transformer'
+2024-03-25T15:15:41.030+03:00  INFO 1160 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-25T15:15:41.030+03:00  INFO 1160 --- [main] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 1 subscriber(s).
+2024-03-25T15:15:41.030+03:00  INFO 1160 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'myFileWriter.serviceActivator'
+2024-03-25T15:15:41.030+03:00  INFO 1160 --- [main] ProxyFactoryBean$MethodInvocationGateway : started bean 'fileGateAway#writeToFife(String, String)'
+2024-03-25T15:15:41.030+03:00  INFO 1160 --- [main] .s.i.g.AnnotationGatewayProxyFactoryBean : started bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-25T15:15:41.043+03:00  INFO 1160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-03-25T15:15:41.063+03:00  INFO 1160 --- [main] com.example.ShopNet.ShopNetApplication   : Started ShopNetApplication in 6.689 seconds (process running for 7.337)
+2024-03-25T15:15:45.879+03:00  INFO 1160 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-25T15:15:45.880+03:00  INFO 1160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-25T15:15:45.881+03:00  INFO 1160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-25T15:19:02.105+03:00  INFO 1160 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {file:outbound-channel-adapter:myFileWriter.serviceActivator} as a subscriber to the 'mcFileWriter' channel
+2024-03-25T15:19:02.105+03:00  INFO 1160 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcFileWriter' has 0 subscriber(s).
+2024-03-25T15:19:02.106+03:00  INFO 1160 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myFileWriter.serviceActivator'
+2024-03-25T15:19:02.106+03:00  INFO 1160 --- [SpringApplicationShutdownHook] ProxyFactoryBean$MethodInvocationGateway : stopped bean 'fileGateAway#writeToFife(String, String)'
+2024-03-25T15:19:02.106+03:00  INFO 1160 --- [SpringApplicationShutdownHook] .s.i.g.AnnotationGatewayProxyFactoryBean : stopped bean 'fileGateAway'; defined in: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'; from source: 'file [D:\java_lessons\ShopNet\target\classes\com\example\ShopNet\services\FileGateAway.class]'
+2024-03-25T15:19:02.106+03:00  INFO 1160 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-03-25T15:19:02.106+03:00  INFO 1160 --- [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2024-03-25T15:19:02.106+03:00  INFO 1160 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2024-03-25T15:19:02.106+03:00  INFO 1160 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {transformer:myTransformer.transformer} as a subscriber to the 'mcInput' channel
+2024-03-25T15:19:02.106+03:00  INFO 1160 --- [SpringApplicationShutdownHook] o.s.integration.channel.DirectChannel    : Channel 'application.mcInput' has 0 subscriber(s).
+2024-03-25T15:19:02.107+03:00  INFO 1160 --- [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'myTransformer.transformer'
+2024-03-25T15:19:02.110+03:00  INFO 1160 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-25T15:19:02.112+03:00  INFO 1160 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-25T15:19:02.117+03:00  INFO 1160 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -19,6 +19,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+/**
+ * Сервис для работы с пользователями.
+ * Обеспечивает операции создания, получения списка, блокировки, изменения ролей и аутентификации пользователей.
+ */
 
 @Service
 @Slf4j
@@ -28,7 +32,12 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-
+    /**
+     * Создает нового пользователя.
+     *
+     * @param user Пользователь для создания.
+     * @return true, если пользователь успешно создан, иначе false.
+     */
 
     public boolean createUser(User user){
         String email = user.getEmail();
@@ -42,10 +51,21 @@ public class UserService {
         return true;
     }
 
+    /**
+     * Возвращает список всех пользователей.
+     *
+     * @return Список всех пользователей.
+     */
+
     public List<User> list(){
         return userRepository.findAll();
     }
 
+    /**
+     * Блокирует или разблокирует пользователя по его идентификатору.
+     *
+     * @param id Идентификатор пользователя.
+     */
     public void banUser(Long id) {
         User user = userRepository.findById( id ).orElse( null );
         if(user != null){
@@ -63,6 +83,12 @@ public class UserService {
 
     }
 
+    /**
+     * Изменяет роли пользователя.
+     *
+     * @param user Пользователь, роли которого нужно изменить.
+     * @param form Форма с новыми ролями.
+     */
     public void changeUserRoles(User user, Map<String, String> form) {
         Set<String> roles = Arrays.stream(Role.values())
                 .map(Role::name)
@@ -76,6 +102,12 @@ public class UserService {
         userRepository.save( user );
     }
 
+    /**
+     * Возвращает пользователя по его принципалу.
+     *
+     * @param principal Принципал пользователя.
+     * @return Пользователь, соответствующий принципалу.
+     */
     public User getUserByPrincipal(Principal principal) {
         if (principal == null) return new User();
         return userRepository.findByEmail(principal.getName());
@@ -95,6 +127,13 @@ public class UserService {
                 .build();
     }
 
+    /**
+     * Проверяет аутентификацию пользователя.
+     *
+     * @param username Имя пользователя.
+     * @param password Пароль пользователя.
+     * @return true, если аутентификация прошла успешно, иначе false.
+     */
     public boolean authenticate(String username, String password) {
         UserDetails userDetails = loadUserByUsername(username);
 

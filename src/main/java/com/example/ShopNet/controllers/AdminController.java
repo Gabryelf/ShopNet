@@ -16,12 +16,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.security.Principal;
 import java.util.Map;
 
+/**
+ * Контроллер для администрирования пользователей.
+ * Требует, чтобы пользователь обладал ролью ROLE_ADMIN для доступа ко всем методам контроллера.
+ */
 @Controller
 @RequiredArgsConstructor
-@PreAuthorize( "hasAuthority('ROLE_ADMIN')" )
+@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 public class AdminController {
+
     private final UserService userService;
 
+    /**
+     * Обрабатывает GET-запросы для пути /admin.
+     * Передает список всех пользователей и информацию о текущем пользователе в модель.
+     *
+     * @param model     Модель для передачи данных в представление.
+     * @param principal Объект Principal для получения информации о текущем пользователе.
+     * @return Строку, представляющую имя представления "admin".
+     */
     @GetMapping("/admin")
     public String admin(Model model, Principal principal) {
         model.addAttribute("users", userService.list());
@@ -29,27 +42,49 @@ public class AdminController {
         return "admin";
     }
 
-
+    /**
+     * Обрабатывает GET-запросы для пути /admin/user/edit/{user}.
+     * Возвращает представление "user-edit" для редактирования пользователя.
+     * Передает информацию о пользователе, его ролях и текущем пользователе в модель.
+     *
+     * @param user      Пользователь для редактирования.
+     * @param model     Модель для передачи данных в представление.
+     * @param principal Объект Principal для получения информации о текущем пользователе.
+     * @return Строку, представляющую имя представления "user-edit".
+     */
     @GetMapping("/admin/user/edit/{user}")
     public String userEdit(@PathVariable("user") User user, Model model, Principal principal) {
         model.addAttribute("user", user);
-        model.addAttribute("user", userService.getUserByPrincipal(principal));
+        model.addAttribute("currentUser", userService.getUserByPrincipal(principal));
         model.addAttribute("roles", Role.values());
         return "user-edit";
     }
 
+    /**
+     * Обрабатывает POST-запросы для пути /admin/user/edit.
+     * Изменяет роли пользователя на основе переданных данных формы.
+     *
+     * @param user Пользователь, чьи роли будут изменены.
+     * @param form Данные формы с новыми ролями пользователя.
+     * @return Строку перенаправления на /admin.
+     */
     @PostMapping("/admin/user/edit")
-    public String userEdit(@RequestParam("userId") User user, @RequestParam Map<String, String> form){
+    public String userEdit(@RequestParam("userId") User user, @RequestParam Map<String, String> form) {
         userService.changeUserRoles(user, form);
         return "redirect:/admin";
     }
 
+    /**
+     * Обрабатывает POST-запросы для пути /admin/user/ban/{id}.
+     * Блокирует пользователя с указанным идентификатором.
+     *
+     * @param id Идентификатор пользователя для блокировки.
+     * @return Строку перенаправления на /admin.
+     */
     @PostMapping("/admin/user/ban/{id}")
-    public String userBan(@PathVariable("id") Long id){
+    public String userBan(@PathVariable("id") Long id) {
         userService.banUser(id);
         return "redirect:/admin";
-
     }
-
-
 }
+

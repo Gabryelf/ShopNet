@@ -1,5 +1,7 @@
 package com.example.ShopNet.controllers;
 
+import com.example.ShopNet.configurations.ApacheHttpClientExample;
+import com.example.ShopNet.configurations.ApacheStatusChecker;
 import com.example.ShopNet.configurations.ArchiveExtractor;
 import com.example.ShopNet.configurations.UnityProjectInfo;
 import com.example.ShopNet.models.Archive;
@@ -20,6 +22,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+/**
+ * Контроллер для управления Unity-проектами.
+ */
+
 @Controller
 @Slf4j
 @RequiredArgsConstructor
@@ -31,10 +37,28 @@ public class UnityController {
 
     private final ArchiveService archiveService;
     private final ArchiveExtractor archiveExtractor;
+    private final ApacheStatusChecker apacheStatusChecker;
+
+    /**
+     * Обрабатывает запрос на запуск Unity-проекта.
+     *
+     * @param productName Название продукта (имя проекта Unity).
+     * @return Ответ с URL проекта Unity или сообщением об ошибке.
+     */
 
     @GetMapping("/startArchive/{productName}")
     public synchronized ResponseEntity<String> startUnityProject(@PathVariable("productName") String productName) {
         try {
+
+            // Проверяем статус Apache
+            boolean isApacheRunning = apacheStatusChecker.isApacheRunning("localhost", 80);
+            if (isApacheRunning) {
+                logger.info("Apache работает");
+            } else {
+                logger.error("Apache не работает");
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body("Apache не работает.");
+            }
             logger.info("Начало обработки запроса startUnityProject для productName: {}", productName);
 
             // Проверяем, существует ли информация о проекте в файле index_path.json
@@ -42,7 +66,7 @@ public class UnityController {
             if (projectInfo != null && projectInfo.getProjectName().equals(productName)) {
                 // Если информация о проекте уже существует и совпадает с запрошенным проектом,
                 // то просто возвращаем путь к проекту без повторного копирования архива
-                String unityProjectUrl = "C:/Windows/unity/" + productName + "/index.html";
+                String unityProjectUrl = "http://localhost/unity/" + productName + "/index.html";
                 logger.info("Проект Unity уже скачан. URL проекта Unity: {}", unityProjectUrl);
                 return ResponseEntity.ok().contentType(MediaType.TEXT_HTML)
                         .body("<html><body><script>window.location.href = \"" + unityProjectUrl + "\";</script></body></html>");
@@ -75,10 +99,13 @@ public class UnityController {
             // Сохраняем информацию о проекте в файл index_path.json
             saveProjectInfoToJson(productName, projectDirectory);
 
+            // Запускаем Unity проект с помощью локального веб-сервера Apache
+            runUnityProject(productName);
+
             // Возвращаем HTML страницу с JavaScript для автоматического перенаправления на URL проекта Unity
-            String unityProjectUrl = "C:/Windows/unity/" + productName + "/index.html";
+            String unityProjectUrl = "http://localhost/unity/" + productName + "/index.html";
             String htmlResponse = "<html><body><script>window.location.href = \"" + unityProjectUrl + "\";</script></body></html>";
-            return ResponseEntity.ok().contentType( MediaType.TEXT_HTML).body(htmlResponse);
+            return ResponseEntity.ok().contentType(MediaType.TEXT_HTML).body(htmlResponse);
         } catch (IOException e) {
             // В случае ошибки ввода-вывода при обработке архива, возвращаем ошибку сервера
             logger.error("Ошибка при обработке архива", e);
@@ -89,8 +116,23 @@ public class UnityController {
         }
     }
 
+    /**
+     * Запускает Unity-проект.
+     *
+     * @param productName Название продукта (имя проекта Unity).
+     */
+
+    private void runUnityProject(String productName) {
+        ApacheHttpClientExample httpClientExample = new ApacheHttpClientExample(productName);
+        httpClientExample.executeRequest();
+    }
 
 
+    /**
+     * Читает информацию о проекте из файла JSON.
+     *
+     * @return Информация о проекте, если найдена, иначе null.
+     */
     private UnityProjectInfo readProjectInfoFromJson() {
         ObjectMapper objectMapper = new ObjectMapper();
         File file = new File(PROJECT_INFO_FILE);
@@ -108,6 +150,13 @@ public class UnityController {
             return null;
         }
     }
+
+    /**
+     * Сохраняет информацию о проекте в файл JSON.
+     *
+     * @param productName    Название продукта (имя проекта Unity).
+     * @param projectDirectory Директория проекта Unity.
+     */
 
     public void saveProjectInfoToJson(String productName, String projectDirectory) {
         UnityProjectInfo projectInfo = new UnityProjectInfo(productName, projectDirectory);

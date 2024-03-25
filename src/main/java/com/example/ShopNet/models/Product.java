@@ -9,6 +9,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Сущность, представляющая товар пользователя в базе данных.
+ */
 @Entity
 @Table(name = "products")
 @Data

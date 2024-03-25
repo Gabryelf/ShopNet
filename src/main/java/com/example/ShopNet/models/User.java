@@ -9,6 +9,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.time.LocalDateTime;
 import java.util.*;
 
+/**
+ * Сущность, представляющая пользователя и его данные в базе данных.
+ */
 @Entity
 @Table(name = "users")
 @Data

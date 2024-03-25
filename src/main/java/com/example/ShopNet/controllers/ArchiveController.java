@@ -18,6 +18,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Контроллер для работы с архивами.
+ */
+
 @Controller
 @Slf4j
 @RequestMapping("/archive")
@@ -27,22 +31,14 @@ public class ArchiveController {
     private final ArchiveService archiveService;
     private final ProductService productService;
 
-
-
-    /*@GetMapping("/up-archive/{productName}")
-    public String showUpArchiveForm(@PathVariable String productName, Model model) {
-        List<Product> products = productService.findByTitle(productName);
-        if (!products.isEmpty()) {
-            Product product = products.get(0);
-            model.addAttribute("product", product);
-            model.addAttribute("archive", new Archive());
-            return "upArcForm";
-        } else {
-            // Если продукт с указанным productName не найден, перенаправляем на главную страницу
-            log.info( " ErrorDeleted. NotFoundName{}", archiveService.findByProductName( productName ));
-            return "redirect:/";
-        }
-    }*/
+    /**
+     * Отображает форму загрузки архива для указанного продукта.
+     * Если архив уже существует для данного продукта, добавляет информацию об этом в модель.
+     *
+     * @param productName Название продукта.
+     * @param model       Модель для передачи данных в представление.
+     * @return Строку, представляющую имя представления "upArcForm".
+     */
     @GetMapping("/up-archive/{productName}")
     public String showUpArchiveForm(@PathVariable String productName, Model model) {
         List<Product> products = productService.findByTitle(productName);
@@ -72,7 +68,15 @@ public class ArchiveController {
     }
 
 
-
+    /**
+     * Загружает архив для указанного продукта.
+     *
+     * @param productName        Название продукта.
+     * @param archive            Объект архива.
+     * @param archiveFile        Файл архива для загрузки.
+     * @param redirectAttributes Объект для добавления атрибутов для перенаправления.
+     * @return Строку перенаправления на страницу деталей продукта.
+     */
 
 
     @PostMapping("/up-archive/{productName}")
@@ -94,6 +98,15 @@ public class ArchiveController {
         return "redirect:/product/upload/" + productName;
     }
 
+    /**
+     * Отображает форму удаления архива для указанного продукта.
+     * Если архив не найден, перенаправляет на главную страницу.
+     *
+     * @param productName Название продукта.
+     * @param model       Модель для передачи данных в представление.
+     * @return Строку, представляющую имя представления "delArcForm" при успешном поиске архива,
+     * иначе перенаправляет на главную страницу.
+     */
 
     @GetMapping("/del-archive/{productName}")
     public String showDeleteArchive(@PathVariable String productName, Model model) {
@@ -109,6 +122,15 @@ public class ArchiveController {
     }
 
 
+    /**
+     * Удаляет архив для указанного продукта.
+     * После успешного удаления архива устанавливает сообщение об успешном удалении и перенаправляет на страницу деталей продукта.
+     *
+     * @param productName        Название продукта.
+     * @param redirectAttributes Объект для добавления атрибутов для перенаправления.
+     * @return Строку перенаправления на страницу деталей продукта при успешном удалении архива,
+     * иначе перенаправляет на главную страницу.
+     */
     @PostMapping("/del-archive/{productName}")
     public String deleteArchive(@PathVariable String productName, RedirectAttributes redirectAttributes) {
         // Убедимся, что productName не пустой
@@ -133,6 +155,14 @@ public class ArchiveController {
         }
     }
 
+    /**
+     * Скачивает архив для указанного продукта.
+     * Если архив не найден, возвращает ResponseEntity с кодом ошибки.
+     *
+     * @param productName Название продукта.
+     * @return ResponseEntity с содержимым архива или кодом ошибки, если архив не найден.
+     */
+
     @GetMapping("/download/{productName}")
     public ResponseEntity<byte[]> downloadArchive(@PathVariable("productName") String productName) {
         log.info("Downloading archive for product: {}", productName);
@@ -153,12 +183,5 @@ public class ArchiveController {
             return ResponseEntity.notFound().build();
         }
     }
-
-
-
-
-
-
-
 
 }

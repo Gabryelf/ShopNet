@@ -18,6 +18,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Контроллер для управления видеофайлами.
+ */
 @Controller
 @Slf4j
 @RequestMapping("/video")
@@ -26,6 +29,14 @@ public class VideoController {
 
     private final VideoService videoService;
     private final ProductService productService;
+
+    /**
+     * Отображает форму загрузки видеофайла для указанного продукта.
+     *
+     * @param productName Название продукта, для которого загружается видео.
+     * @param model       Модель, используемая для передачи данных в представление.
+     * @return Страница формы загрузки видео.
+     */
 
     @GetMapping("/upload/{productName}")
     public String showUploadForm(@PathVariable String productName, Model model) {
@@ -42,6 +53,15 @@ public class VideoController {
         }
     }
 
+    /**
+     * Обрабатывает запрос на загрузку видеофайла для указанного продукта.
+     *
+     * @param productName        Название продукта, для которого загружается видео.
+     * @param video              Объект видеофайла.
+     * @param videoFile          Загружаемый видеофайл.
+     * @param redirectAttributes Редирект атрибуты для передачи сообщений при редиректе.
+     * @return Перенаправление на страницу с деталями продукта в случае успешной загрузки, иначе на страницу загрузки с сообщением об ошибке.
+     */
 
     @PostMapping("/upload/{productName}")
     public String uploadVideo(@PathVariable String productName,
@@ -62,6 +82,13 @@ public class VideoController {
         return "redirect:/product/upload/" + productName;
     }
 
+    /**
+     * Отображает форму для удаления видеофайла для указанного продукта.
+     *
+     * @param productName Название продукта, для которого удаляется видео.
+     * @param model       Модель, используемая для передачи данных в представление.
+     * @return Страница формы удаления видео.
+     */
 
     @GetMapping("/delete/{productName}")
     public String showDeleteForm(@PathVariable String productName, Model model) {
@@ -75,6 +102,7 @@ public class VideoController {
             return "redirect:/product-info";
         }
     }
+
 
 
     @PostMapping("/delete/{productName}")
@@ -102,6 +130,12 @@ public class VideoController {
         }
     }
 
+    /**
+     * Скачивает видеофайл для указанного продукта.
+     *
+     * @param productName Название продукта, для которого скачивается видео.
+     * @return Ответ с содержимым видеофайла в виде массива байтов.
+     */
     @GetMapping("/download/{productName}")
     public ResponseEntity<byte[]> downloadVideo(@PathVariable("productName") String productName) {
         // Получить видео файл из базы данных для продукта с указанным productName

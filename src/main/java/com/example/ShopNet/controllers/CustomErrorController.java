@@ -7,9 +7,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * Контроллер для обработки ошибок.
+ */
 @Controller
 public class CustomErrorController implements ErrorController {
 
+    /**
+     * Обрабатывает ошибки HTTP и возвращает соответствующие страницы с сообщениями об ошибке.
+     *
+     * @param request HTTP-запрос, содержащий информацию об ошибке.
+     * @return Строку, представляющую имя представления страницы с сообщением об ошибке в зависимости от типа ошибки.
+     */
     @RequestMapping("/error")
     public String handleError(HttpServletRequest request) {
         // Получение информации о статусе ошибки
@@ -27,6 +36,11 @@ public class CustomErrorController implements ErrorController {
         return "error";
     }
 
+    /**
+     * Возвращает путь к странице обработки ошибок.
+     *
+     * @return Строку, представляющую путь к странице обработки ошибок.
+     */
 
     public String getErrorPath() {
         return "/error";
