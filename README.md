@@ -23,20 +23,16 @@
 
 
 
-
-
-
-
 ![image](https://github.com/Gabryelf/ShopNet/assets/145398532/4c8d6c98-eb45-4ea8-b66f-fe15b8d993c8)
 
 
+![image](https://github.com/Gabryelf/ShopNet/assets/145398532/de52048e-5f3c-42e8-9e3e-1c073c944af2)
 
 
+![image](https://github.com/Gabryelf/ShopNet/assets/145398532/6ed479b7-08ad-479d-a112-b82be50cef7d)
 
 
-
-
-
+![image](https://github.com/Gabryelf/ShopNet/assets/145398532/eaed5ddf-8416-4700-93da-b63de5e7e883)
 
 
 
