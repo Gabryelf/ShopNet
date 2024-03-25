@@ -27,9 +27,9 @@
 
 
 
+![image](https://github.com/Gabryelf/ShopNet/assets/145398532/4c8d6c98-eb45-4ea8-b66f-fe15b8d993c8)
 
 
-![Uploading image.png…]()
 
 
 
