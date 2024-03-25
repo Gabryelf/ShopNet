@@ -21,6 +21,7 @@
     • Mockito для тестирования приложения.
 Таким образом, это приложение представляет собой полноценную платформу для создания, обмена и просмотра персональных продуктов и игр на платформе Unity, обеспечивая удобный и безопасный интерфейс для пользователей.  
 
+https://github.com/Gabryelf/ShopNet/blob/master/src/main/resources/files/1.png?raw=true
 
 
 
@@ -37,7 +38,6 @@
 
 
 
-https://github.com/Gabryelf/ShopNet/blob/master/src/main/resources/files/1.png
 
 
 
